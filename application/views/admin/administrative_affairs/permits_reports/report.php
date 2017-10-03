@@ -120,34 +120,7 @@
                                                     }
                                                     ?>
                                                     <!--------------------------------------------------------->
-                                                    <div class="modal fade" id="myModal-<?php echo $row->permit_num; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content" >
-                                                                <div class="modal-header">
 
-                                                                    <h4 class="modal-title">تفاصيل الأذن : ( <? echo $select[$row->emp_code][0]->employee ; ?>)</h4>
-                                                                </div>
-                                                                <?php echo form_open_multipart('Administrative_affairs/suspendreports/')?>
-
-                                                                <label for="inputUser" class="col-lg-5 control-label">سبب القبول او الرفض</label>
-                                                                <input  id="reason"  name="reason"  class="form-control text-right" placeholder="سبب القبول او الرفض" required/>
-                                                                <table  class="table table-bordered">
-                                                                    <tr>
-                                                                        <input type="hidden" name="id" value="<? echo $date->id;?>" >
-                                                                        <th width="40%" class="text-right"> <input style="margin-left: 70px;" type="submit"  name="accept" value="موافقة"  class="btn btn-success btn-xs col-lg-6" ></th>
-                                                                        <th width="40%" class="text-right"> <input  style="margin-left: 70px;" type="submit"  name="refuse" value="رفض"  class="btn btn-danger btn-xs col-lg-6" ></th>
-                                                                    </tr>
-                                                                </table>
-
-
-                                                                <?php echo form_close()?>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!------------------------------------------------>
                                                     <!-- Modal success -->
                                                     <div class="modal fade modal-success" id="modala<?php echo $date->permit_num; ?>" tabindex="-1" role="dialog">
                                                         <div class="modal-dialog" role="document">

@@ -15,7 +15,7 @@
                         <?php if(!empty($admin)):
                             foreach ($admin as $record):
                                 $sect='';
-                                if( $result[0]->administration ==$record->id ){
+                                if( $employ_name[$result['emp_id']][0]->administration ==$record->id ){
                                     $sect ='selected';
                                 }
                                 ?>
@@ -57,13 +57,13 @@
 
                 <div class="form-group col-sm-4">
                     <label class="label label-green  half"> من</label>
-                    <input type="text"  name="from_date" class=" some_class form-control half input-style" value="<? echo $result['from_date'];?>" placeholder="يوم / شهر / سنة"  id="some_class_1">
+                    <input type="text"  name="from_date" class=" some_class_2 form-control half input-style"  placeholder="يوم / شهر / سنة"  value="<? echo $result['from_date'];?>" id="some_class_1">
                 </div>
 
 
                 <div class="form-group col-sm-4">
                     <label class="label label-green  half">إلي</label>
-                    <input type="number" name="to_date"  class="form-control half input-style" value="<? echo $result['to_date'];?>" placeholder=" رقم الهاتف"  >
+                    <input type="text"  name="to_date" class=" some_class_2 form-control half input-style"  placeholder="يوم / شهر / سنة"  value="<? echo $result['to_date'];?>" id="some_class_2">
                 </div>
                 <div class="form-group col-sm-4">
                     <label class="label label-green  half">التأشيره المطلوبة</label>
@@ -127,9 +127,9 @@
                                 <option value="<? echo $record->id;?>" <? echo $sect;?>><? echo $record->name;?></option>
                             <?php  endforeach; endif;?>
                     </select>
-                    <?php else: ?>
+                    <?php elseif($_SESSION['role_id_fk'] == 3): ?>
                     <input type="hidden" name="main_dep_f_id" value="<? echo $employ_name[$_SESSION['emp_code']][0]->administration ?>">
-                    <select class="choose-date selectpicker form-control half" name="main_dep_f_id" id="main_dep_f_id"    data-show-subtext="true" data-live-search="true">
+                    <select class="choose-date selectpicker form-control half" name="main_dep_f_id" id="main_dep_f_id"   disabled  data-show-subtext="true" data-live-search="true">
                             <?php if (!empty($employ_name[$_SESSION['emp_code']])):
                                 if(!empty($admin)):
                                     foreach ($admin as $record):
@@ -149,7 +149,7 @@
                     <select class="choose-date selectpicker form-control half" name="emp_id" id="emp_id" data-show-subtext="true" data-live-search="true">
                         <option value="">إختر</option>
                     </select>
-                    <?php else:?>
+                    <?php elseif($_SESSION['role_id_fk'] == 3):?>
                     <?php if (!empty($employ_name[$_SESSION['emp_code']])): ?>
                     <input type="hidden" name="emp_id" value="<? echo $employ_name[$_SESSION['emp_code']][0]->id?>">
                     <select class="choose-date selectpicker form-control half" name="emp_id" id="emp_id" disabled data-show-subtext="true" data-live-search="true">
@@ -171,12 +171,12 @@
                 </div>
                 <div class="form-group col-sm-4">
                     <label class="label label-green  half">من</label>
-                    <input type="text"  name="from_date" class=" some_class form-control half input-style"  placeholder="يوم / شهر / سنة"  id="some_class_1">
+                    <input type="text"  name="from_date" class=" some_class_2 form-control half input-style"  placeholder="يوم / شهر / سنة"  id="some_class_1">
                 </div>
 
                 <div class="form-group col-sm-4">
                     <label class="label label-green  half"> إلي</label>
-                    <input type="text"  name="to_date" class=" some_class form-control half input-style"  placeholder="يوم / شهر / سنة"  id="some_class_1">
+                    <input type="text"  name="to_date" class=" some_class_2 form-control half input-style"  placeholder="يوم / شهر / سنة"  id="some_class_2">
                 </div>
 
 
@@ -185,8 +185,10 @@
                     <textarea class="form-control" required name="visa"></textarea>
                 </div>
 
-                <div class="form-group col-sm-4" id="optionearea55">
-                    <?php if (!empty($employ_name[$_SESSION['emp_code']])): ?>
+                <div class="form-group col-sm-8" id="optionearea55">
+                    <?php
+                    if($_SESSION['role_id_fk'] == 3):
+                    if (!empty($employ_name[$_SESSION['emp_code']])): ?>
                     <?php
                     $query2 =$this->db->query('SELECT * FROM `vacations` WHERE `deleted`=1 AND `emp_id`='.$employ_name[$_SESSION['emp_code']][0]->id);
                     $arr=array();
@@ -195,7 +197,7 @@
                     }
                     ?>
                         <?php if (sizeof($arr)>0) {   ?>
-                            <div class="col-md-6">
+                            <div class="form-group col-sm-6">
                             <table class="table table-bordered table-striped "  style=""  >
                             <thead>
                             <tr>
@@ -225,7 +227,6 @@
                         </tbody>
                         </table>
                         </div>
-
                         <?php
                         $idea_emp_id=  $employ_name[$_SESSION['emp_code']][0]->id;
                         $depart=  $employ_name[$_SESSION['emp_code']][0]->administration;
@@ -235,76 +236,26 @@
                         foreach ($query2->result() as  $row2) {
                             $arr[] =$row2;
                         }?>
+                    <?php if (!empty($employ_name[$_SESSION['emp_code']])): ?>
+                        <div class="form-group col-sm-6">
+                            <label class="label label-green  half">الموظف القائم بالعمل</label>
+                            <select class="choose-date selectpicker form-control half" name="emp_assigned_id" id="emp_assigned_id"   required data-show-subtext="true" data-live-search="true">
+
+                                <option value="">إختر </option>
+                                <?php    foreach($arr as $record): ?>
+                                    <option value="<? echo $record->id;?>"><? echo $record->employee;?></option>
+                                <? endforeach;?>
+                            </select>
+                        </div>
+                    <?php endif;?>
                 </div>
-            <?php endif;?>
+            <?php endif;endif;?>
 
-                <?php if (!empty($employ_name[$_SESSION['emp_code']])): ?>
-                    <div class="form-group col-sm-4">
-                        <label class="label label-green  half">الموظف القائم بالعمل</label>
-                        <select class="choose-date selectpicker form-control half" name="emp_assigned_id" id="emp_assigned_id"   required data-show-subtext="true" data-live-search="true">
-
-                        <option value="">إختر </option>
-                            <?php    foreach($arr as $record): ?>
-                                <option value="<? echo $record->id;?>"><? echo $record->employee;?></option>
-                            <? endforeach;?>
-                        </select>
-                    </div>
-            <?php endif;?>
 
 
             </div>
         </div>
     </div>
-
-    <!----------------------------------------->
-<!--    <div class="col-sm-12 fadeInUp wow" data-wow-delay="0.4s">
-        <div  class="panel panel-bd lobidisable lobipanel lobipanel-sortable ">
-            <div class="panel-heading">
-                <h3 class="panel-title"></h3>
-            </div>
-            <div class="panel-body">
-                <div class="form-group col-sm-4">
-                    <label class="label label-green  half">الدرجة</label>
-                    <select class="choose-date selectpicker form-control half" name="degree_id" id="degree_id"    required data-show-subtext="true" data-live-search="true">
-                        <?php /*$degree=array('إختر','1','2','3','4','5','6');
-                        for($a=0;$a<sizeof($degree);$a++):   */?>
-                            <option value="<?/* echo $a; */?>"><?/* echo $degree[$a]; */?></option>
-                        <?/* endfor */?>
-                    </select>
-                </div>
-                <div class="form-group col-sm-4">
-                    <label class="label label-green  half">إسم الموظف</label>
-                    <input type="text" name="employee"  class="form-control half input-style" placeholder="إسم الموظف"  >
-
-                </div>
-                <div class="form-group col-sm-4" id="optionearea1">
-                    <label class="label label-green  half">القسم</label>
-                    <select class="choose-date selectpicker form-control half" name="department" id="department"    data-show-subtext="true" data-live-search="true">
-                        <option value="">إختر</option>
-                    </select>
-                </div>
-
-                <div class="form-group col-sm-4" id="contract_id" style="display: none">
-                    <label class="label label-green  half"> قرار التكليف</label>
-                    <input type="file" name="img"  class="form-control half" placeholder="ارفاق"  >
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label class="label label-green  half"> رقم الهوية</label>
-                    <input type="number" name="id_num"  class="form-control half input-style" placeholder="رقم الهوية" required >
-                </div>
-                <div class="form-group col-sm-4">
-                    <label class="label label-green  half"> العنوان</label>
-                    <input type="text" name="address"  class="form-control half input-style" placeholder="العنوان" required >
-                </div>
-                <div class="form-group col-sm-4">
-                    <label class="label label-green  half">البريد الإلكتروني</label>
-                    <input type="email" name="email"  class="form-control half input-style" placeholder="البريد الإلكتروني" required >
-                </div>
-            </div>
-        </div>
-    </div>-->
-    <!----------------------------------------->
     <!----------------------input------------------->
     <div class="form-group col-sm-5"></div>
     <div class="form-group col-sm-4">
@@ -315,7 +266,7 @@
 
     <!----------------------input------------------->
 
-    <?php if(isset($records)&&$records!=null):?>
+    <?php if(isset($table)&&$table!=null):?>
         <div class="col-sm-12">
             <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable ">
                 <div class="panel-heading">
@@ -383,19 +334,143 @@
                         <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
                             <thead>
                             <tr class="info">
-                                <th>م</th>
-                                <th>إسم الموظف</th>
-                                <th>الإجراء</th>
+                                <th class="text-center">م</th>
+                                <th class="text-center">اسم الموظف</th>
+                                <th class="text-center">الموظف القائم بالعمل</th>
+                                <th class="text-center">مدة الاجازة</th>
+                                <th  class="text-center">حاله الأجازة</th>
+                                <th  class="text-center">الإجراء</th>
+                                <th  class="text-center">التفاصيل</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php $a=1;foreach ($records as $record ):?>
+                            <?php $a=1;foreach ($table as $record ):
+                                $date1 = new DateTime($record->from_date);
+                                $date2 = new DateTime($record->to_date);
+                                $diff = $date2->diff($date1)->format("%a");
+                                if($record->suspend == 1)
+                                {
+                                    $class = 'success';
+                                    $title = 'نشط';
+                                }
+                                else
+                                {
+                                    $class = 'danger';
+                                    $title = 'غير نشط';
+                                }
+                                ?>
                                 <tr>
                                     <td><?php echo $a ?></td>
-                                    <td><? echo $record->employee;?></td>
-                                    <td> <a href="<?php echo base_url('Administrative_affairs/edit_employee').'/'.$record->id?>"><button type="button" class="btn btn-add btn-xs" data-toggle="modal" data-target="#update"><i class="fa fa-pencil"></i></button> </a>
-                                        <a href="<?php echo base_url('Administrative_affairs/delete_employee').'/'.$record->id ?>">     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#customer2"><i class="fa fa-trash-o"></i></button></a></td>
+                                    <td><?   if(!empty($record->emp_id)) :echo $employ_name[$record->emp_id][0]->employee; endif;?></td>
+                                    <td ><? if(!empty($record->emp_assigned_id)) : echo $employ_name[$record->emp_assigned_id][0]->employee; endif; ?></td>
+                                    <td ><? echo $diff; ?></td>
+                                    <td>
+                                        <a href="<?php echo base_url().'Administrative_affairs/suspend_vacation/'.$record->id.'/'.$class?>" class="btn btn-<?php echo $class ?> btn-xs col-lg-8"><?php echo $title ?> </a>
+                                    </td>
+
+                                    <td> <a href="<?php echo base_url('Administrative_affairs/update_vacation').'/'.$record->id?>"><button type="button" class="btn btn-add btn-xs" data-toggle="modal" data-target="#update"><i class="fa fa-pencil"></i></button> </a>
+                                        <a href="#"><button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modald<?php echo$record->id;?>"><i class="fa fa-trash-o"></i></button></a>
+                                      </td>
+                                    <td><button class="btn btn-info w-md m-b-5 md-trigger m-b-5 m-r-2 btn-xs" data-modal="modal-<?php echo $record->id?>">التفاصيل</button>
+                                        <?php
+                                        $query2 =$this->db->query('SELECT * FROM `vacations` WHERE `emp_id`='.$record->emp_id.' And `deleted`=1  ');
+                                        $arr=array();
+                                        foreach ($query2->result() as  $row2) {
+                                            $arr[] = $row2;
+                                        }
+                                        ?>
+
+                                        <!------------------------>
+                                        <div class="md-modal md-effect-11" id="modal-<?php echo $record->id?>">
+                                            <div class="md-content">
+                                                <h3>تفاصيل أجازات الموظف</h3>
+                                                <div class="n-modal-body">
+                                                    <div class="row" style="margin-right:10px">
+                                                        <div class="col-sm-3">
+                                                            <h5> إسم الموظف:</h5>
+                                                        </div>
+                                                        <div class="col-sm-9">
+                                                            <h5><?   if(!empty($record->emp_id)) :echo $employ_name[$record->emp_id][0]->employee; endif;?></h5>                                                        </div>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <table id="no-more-tables" style="width:100%;" class="table table-bordered" role="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th width="5%" class="text-right">م</th>
+                                                                <th  class="text-right">القائم بالعمل</th>
+                                                                <th  class="text-right">المدة</th>
+                                                                <th  class="text-right">نوع الأجازة</th>
+                                                                <th  class="text-right">تاريخ النهاية</th>
+                                                                <th class="text-right">اريخ البداية</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <? if (!empty($arr)) :?>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <?
+                                                                    $count=0;
+                                                                    $sum=0;
+                                                                    foreach ($arr as $row):
+                                                                    $count++;
+                                                                    $date1 = new DateTime($row->from_date);
+                                                                    $date2 = new DateTime($row->to_date);
+                                                                    $diff = $date2->diff($date1)->format("%a");
+                                                                    ?>
+                                                                    <td><? echo $count;?></td>
+                                                                    <td><? echo $row->emp_assigned_id;?></td>
+                                                                    <td><? echo $diff;?></td>
+                                                                    <td><? echo $row->vacation_id;?></td>
+                                                                    <td><? echo $row->to_date;?></td>
+                                                                    <td><? echo $row->from_date;?></td>
+
+                                                                </tr>
+                                                                <? endforeach;?>
+                                                                </tbody>
+                                                            <? endif;?>
+                                                        </table>
+                                                    </div>
+
+                                                    <div class="row" style="margin-right:10px">
+                                                        <div class="col-sm-3">
+                                                            <h5>التأشيرة المطلوبة:</h5>
+                                                        </div>
+                                                        <div class="col-sm-9">
+                                                            <h5><? echo $row->visa;?></h5>
+                                                        </div>
+                                                    </div>
+
+                                                    <!--                                            -->
+                                                    <button class="btn btn-add md-close">إغلاق!</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <!------------------------>
+
+                                    </td>
                                 </tr>
+                                <!------------------------>
+                                <div class="modal fade modal-danger" id="modald<?php echo$record->id;?>" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h1 class="modal-title">حذف أجازة</h1>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>هل تريد حذف العنصر !
+                                                </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <a href="<?php echo base_url('Administrative_affairs/delete_vacation').'/'.$record->id ?>"><button type="button" class="btn btn-danger">حذف</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!------------------------>
                                 <?php $a++;endforeach;  ?>
                             </tbody>
                         </table>

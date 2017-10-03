@@ -336,7 +336,7 @@ $data['permits'] = $this->administrative_affairs_setting->select_search_key_2('p
     public function add_manager_report(){
         $this->load->model('administrative_affairs_models/Report');
         $data['records'] = $this->Report->select_all();
-      
+
         $data['dates'] = $this->Report->select_date(0);
         $data['select_last'] = $this->Report->select_last();
         $this->load->model('administrative_affairs_models/employee');
@@ -486,7 +486,7 @@ $data ['total_holiday_remain'] = $total_holiday_remain;
         $data_load['id']=$this->input->post('valuesx');
         $this->load->view('admin/administrative_affairs/emp_vacations_data',$data_load);
     }elseif ($this->input->post('add')){
-
+$this->test($_POST['from_date']);
         $start_date =$_POST['from_date'];
         $end_date =$_POST['to_date'];
         $query_check =$this->db->query('SELECT * FROM `vacations` WHERE  `emp_id`='.$_POST['emp_id'].' And year = '.$data['year'].' AND  ( `from_date` >= '.$start_date.' or `to_date` <= '.$end_date.')');
@@ -504,7 +504,7 @@ $data ['total_holiday_remain'] = $total_holiday_remain;
         }
 
     }else {
-        $data['records'] = $this->Vacation->select_all();
+        $data['table'] = $this->Vacation->select_all();
       
         
         

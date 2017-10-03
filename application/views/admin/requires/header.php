@@ -28,9 +28,11 @@
 	<link href="<?php echo base_url()?>asisst/admin_asset/css/pe-icon-7-stroke.css" rel="stylesheet" type="text/css"/>
 	<!-- Themify icons -->
 	<link href="<?php echo base_url()?>asisst/admin_asset/css/themify-icons.css" rel="stylesheet" type="text/css"/>
-
-
+ 
 	<link href="<?php echo base_url()?>asisst/admin_asset/css/animate.css" rel="stylesheet" type="text/css"/>
+<!-- iCheck -->
+      <link href="<?php echo base_url()?>asisst/admin_asset/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css"/>
+      <!-- Bootstrap toggle css -->
 
 
 	<!-- End Global Mandatory Style

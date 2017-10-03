@@ -47,7 +47,9 @@
 <!-- Start Theme label Script
     =====================================================================-->
 <!-- Dashboard js -->
-
+  <!-- iCheck js -->
+      <script src="<?php echo base_url()?>asisst/admin_asset/plugins/icheck/icheck.min.js" type="text/javascript"></script>
+      <!-- Bootstrap toggle -->
 <!-- Modal js -->
 <script src="<?php echo base_url()?>asisst/admin_asset/plugins/modals/classie.js" type="text/javascript"></script>
 <script src="<?php echo base_url()?>asisst/admin_asset/plugins/modals/modalEffects.js" type="text/javascript"></script>
@@ -149,8 +151,40 @@
 <script>
 	new WOW().init();
 	$('.some_class').datetimepicker();
+	$('.some_class_2').datepicker();
 </script>
-
+      <script>
+         $('.skin-minimal .i-check input').iCheck({
+             checkboxClass: 'icheckbox_minimal',
+             radioClass: 'iradio_minimal',
+             increaseArea: '20%'
+         });
+         
+         $('.skin-square .i-check input').iCheck({
+             checkboxClass: 'icheckbox_square-green',
+             radioClass: 'iradio_square-green'
+         });
+         
+         
+         $('.skin-flat .i-check input').iCheck({
+             checkboxClass: 'icheckbox_flat-red',
+             radioClass: 'iradio_flat-red'
+         });
+         
+         $('.skin-line .i-check input').each(function () {
+             var self = $(this),
+                     label = self.next(),
+                     label_text = label.text();
+         
+             label.remove();
+             self.iCheck({
+                 checkboxClass: 'icheckbox_line-blue',
+                 radioClass: 'iradio_line-blue',
+                 insert: '<div class="icheck_line-icon"></div>' + label_text
+             });
+         });
+         
+      </script>
 </body>
 
 <!-- Mirrored from crm.thememinister.com/crmAdmin/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Jun 2017 08:04:45 GMT -->

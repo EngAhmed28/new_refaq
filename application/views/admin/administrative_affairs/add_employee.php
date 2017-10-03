@@ -5,7 +5,7 @@
 <div class="col-sm-12 fadeInUp wow" data-wow-delay="0.3s">
     <div  class="panel panel-bd lobidisable lobipanel lobipanel-sortable ">
         <div class="panel-heading">
-            <h3 class="panel-title"></h3>
+            <h3 class="panel-title"> تعديل موظف</h3>
         </div>
         <div class="panel-body">
             <div class="form-group col-sm-4">
@@ -203,7 +203,7 @@
             <div class="col-sm-12 fadeInUp wow" data-wow-delay="0.3s">
                 <div  class="panel panel-bd lobidisable lobipanel lobipanel-sortable ">
                     <div class="panel-heading">
-                        <h3 class="panel-title"></h3>
+                        <h3 class="panel-title"> إضافة موظف</h3>
                     </div>
                     <div class="panel-body">
                         <?php  echo form_open_multipart('Administrative_affairs/add_employee')?>

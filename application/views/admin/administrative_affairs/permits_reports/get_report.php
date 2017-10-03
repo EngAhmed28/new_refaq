@@ -74,7 +74,7 @@ die;*/
                                         <td class="text-right"><? echo $date->time_return ;?></td>
                                         <td class="text-center"><? if (!empty($select_all[$date->emp_code])): echo sizeof($select_all[$date->emp_code]); else: echo 0; endif;?></td>
                                         <td class="text-right">
-                                            <button class="btn btn-info w-md m-b-5 md-trigger m-b-5 m-r-2 btn-xs" data-modal="modal-<?php echo $date->permit_num;?>">التفاصيل</button></td>
+                                            <button type="button" class="btn btn-primary m-r-2 m-b-5 btn-xs" data-toggle="modal" data-target="#modal-primary<?php echo $date->permit_num;?>">التفاصيل</button>
                                         <td class="text-right">
 
                                             <button type="button" class="btn btn-success m-r-2 m-b-5 btn-xs" data-toggle="modal" data-target="#modala<?php echo $date->permit_num; ?>">موافق</button>
@@ -119,34 +119,7 @@ die;*/
 
                                     ?>
                                     <!--------------------------------------------------------->
-                                    <div class="modal fade" id="myModal-<?php echo $row->permit_num; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content" >
-                                                <div class="modal-header">
 
-                                                    <h4 class="modal-title">تفاصيل الأذن : ( <? echo $select[$row->emp_code][0]->employee ; ?>)</h4>
-                                                </div>
-                                                <?php echo form_open_multipart('Administrative_affairs/suspendreports/')?>
-
-                                                <label for="inputUser" class="col-lg-5 control-label">سبب القبول او الرفض</label>
-                                                <input  id="reason"  name="reason"  class="form-control text-right" placeholder="سبب القبول او الرفض" required/>
-                                                <table  class="table table-bordered">
-                                                    <tr>
-                                                        <input type="hidden" name="id" value="<? echo $date->id;?>" >
-                                                        <th width="40%" class="text-right"> <input style="margin-left: 70px;" type="submit"  name="accept" value="موافقة"  class="btn btn-success btn-xs col-lg-6" ></th>
-                                                        <th width="40%" class="text-right"> <input  style="margin-left: 70px;" type="submit"  name="refuse" value="رفض"  class="btn btn-danger btn-xs col-lg-6" ></th>
-                                                    </tr>
-                                                </table>
-
-
-                                                <?php echo form_close()?>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!------------------------------------------------>
                                     <!-- Modal success -->
                                     <div class="modal fade modal-success" id="modala<?php echo $date->permit_num; ?>" tabindex="-1" role="dialog">
                                         <div class="modal-dialog" role="document">
@@ -195,41 +168,53 @@ die;*/
                                         </div>
                                     </div>
                                     <!------------------------------------------------>
-                                    <div class="md-modal md-effect-1" id="modal-<?php echo $date->permit_num;?>">
-                                        <div class="md-content">
-                                            <h3>تفاصيل الإذن</h3>
-                                            <div class="n-modal-body">
-                                                <table  class="table table-bordered">
-                                                    <tr>
-                                                        <th width="40%" class="text-right">الإسم</th>
-                                                        <th class="text-right"><? echo $select[$row->emp_code][0]->employee ; ?></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th width="40%" class="text-right">الإدارة</th>
-                                                        <th class="text-right"> <? if(!empty($job_title[$select[$date->emp_code][0]->department])): echo$job_title[$select[$date->emp_code][0]->administration][0]->name; endif;?>--<? if(!empty($job_title[$select[$date->emp_code][0]->department])): echo$job_title[$select[$date->emp_code][0]->department][0]->name; endif;?></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th width="40%" class="text-right">سبب الإذن</th>
-                                                        <th class="text-right"> <? echo $row->permit_reason;?></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th width="40%" class="text-right">تاريخ أخر إذن</th>
-                                                        <th class="text-right"><? if(!empty($select_last[$row->date][0]->date)):
-                                                                echo date('Y-m-d',$select_last[$row->date][0]->date); else:
-                                                                echo 'لا توجد أذونات سابقة';endif; ?></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td rowspan="2">عدد الأذونات السابقة<label class="label-info" style="margin-right: 20px"><? if (!empty($select_last[$row->date])): echo sizeof($select_last[$row->date]); else: echo 0; endif;?></label></td>
-                                                        <td>الموافق عليها<span style="margin-right: 20px"><? echo $accept; ?></span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td> المرفوضة<span style="margin-right: 20px"><? echo $ref; ?></span></td>
-                                                    </tr>
-                                                </table>
-                                                <button class="btn btn-add md-close">Close me!</button>
+                                    <!-- Modal primary -->
+                                    <div class="modal fade modal-primary" id="modal-primary<?php echo $date->permit_num;?>" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h1 class="modal-title">تفاصيل الإذن</h1>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table  class="table table-bordered">
+                                                        <tr>
+                                                            <th width="40%" class="text-right">الإسم</th>
+                                                            <th class="text-right"><? echo $select[$row->emp_code][0]->employee ; ?></th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="40%" class="text-right">الإدارة</th>
+                                                            <th class="text-right"> <? if(!empty($job_title[$select[$date->emp_code][0]->department])): echo$job_title[$select[$date->emp_code][0]->administration][0]->name; endif;?>--<? if(!empty($job_title[$select[$date->emp_code][0]->department])): echo$job_title[$select[$date->emp_code][0]->department][0]->name; endif;?></th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="40%" class="text-right">سبب الإذن</th>
+                                                            <th class="text-right"> <? echo $row->permit_reason;?></th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="40%" class="text-right">تاريخ أخر إذن</th>
+                                                            <th class="text-right"><? if(!empty($select_last[$row->date][0]->date)):
+                                                                    echo date('Y-m-d',$select_last[$row->date][0]->date); else:
+                                                                    echo 'لا توجد أذونات سابقة';endif; ?></th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td rowspan="2">عدد الأذونات السابقة<label class="label-info" style="margin-right: 20px"><? if (!empty($select_last[$row->date])): echo sizeof($select_last[$row->date]); else: echo 0; endif;?></label></td>
+                                                            <td>الموافق عليها<span style="margin-right: 20px"><? echo $accept; ?></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> المرفوضة<span style="margin-right: 20px"><? echo $ref; ?></span></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">إغلاق</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!------------------------------------------------>
+
+
+
                                     <!------------------------------------------>
                                 <? endforeach;
                             endif;?>
