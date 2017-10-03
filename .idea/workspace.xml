@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54fd9d53-4765-4638-a0ff-79308d64d493" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/admin/administrative_affairs/permits_reports/report2.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/admin/penalty/get_departs2.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/debts_approved.php" afterPath="$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/debts_approved.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/employee_debts.php" afterPath="$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/employee_debts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/report_emp/all_departs_emp.php" afterPath="$PROJECT_DIR$/application/views/admin/report_emp/all_departs_emp.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,8 +34,8 @@
       <file leaf-file-name="Administrative_affairs.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Administrative_affairs.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-26">
-              <caret line="824" column="40" selection-start-line="824" selection-start-column="20" selection-end-line="824" selection-end-column="40" />
+            <state relative-caret-position="402">
+              <caret line="863" column="77" selection-start-line="863" selection-start-column="63" selection-end-line="863" selection-end-column="77" />
               <folding>
                 <element signature="e#3801#4823#0#PHP" expanded="true" />
                 <element signature="e#4847#5501#0#PHP" expanded="true" />
@@ -58,11 +56,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="vacations_approved.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/vacations_approved.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="debts_approved.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/debts_approved.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="80" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
+              <folding>
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#1;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.php" pinned="false" current-in-tab="true">
         <entry file="file://$USER_HOME$/Downloads/form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="1972" column="23" selection-start-line="1972" selection-start-column="23" selection-end-line="1985" selection-end-column="42" />
+            <state relative-caret-position="248">
+              <caret line="1761" column="55" selection-start-line="1761" selection-start-column="34" selection-end-line="1761" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -71,7 +98,7 @@
       <file leaf-file-name="staff_evaluation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/staff_evaluation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="-607">
               <caret line="210" column="19" selection-start-line="210" selection-start-column="19" selection-end-line="212" selection-end-column="37" />
               <folding>
                 <element signature="n#div#0;n#!!top" expanded="false" />
@@ -89,33 +116,6 @@
               <folding>
                 <marker date="1507037465129" expanded="true" signature="5145:5196" ph="SELECT * FRO... department_jobs" />
                 <marker date="1507037465129" expanded="true" signature="5743:5788" ph="SELECT * FRO... employees" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employee_debts.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/employee_debts.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2244">
-              <caret line="185" column="59" selection-start-line="185" selection-start-column="59" selection-end-line="185" selection-end-column="59" />
-              <folding>
-                <element signature="n#div#0;n#div#1;n#div#0;n#div#4;n#!!top" expanded="false" />
-                <marker date="1507039891536" expanded="true" signature="12433:13221" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="13406:15449" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="13467:15410" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="13596:15275" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="13658:14135" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="13729:13865" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="13936:14084" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="14197:14692" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="14268:14406" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="14477:14641" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="14754:15228" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="14825:14962" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="15033:15177" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="17470:17526" ph="..." />
-                <marker date="1507039891536" expanded="true" signature="17498:17526" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -146,7 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/web/requires/header.php" />
         <option value="$PROJECT_DIR$/application/models/Trainer.php" />
         <option value="$PROJECT_DIR$/application/views/admin/videos/videos.php" />
         <option value="$PROJECT_DIR$/application/models/Videos.php" />
@@ -197,6 +196,7 @@
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/permits_reports/get_report.php" />
         <option value="$PROJECT_DIR$/application/views/admin/report_emp/all_departs_emp.php" />
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/employee_debts.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/debts_approved.php" />
       </list>
     </option>
   </component>
@@ -549,7 +549,7 @@
       <workItem from="1506856702885" duration="274000" />
       <workItem from="1506857075746" duration="8042000" />
       <workItem from="1506930990188" duration="22690000" />
-      <workItem from="1507017664811" duration="14891000" />
+      <workItem from="1507017664811" duration="16079000" />
     </task>
     <task id="LOCAL-00001" summary="success">
       <created>1507037078958</created>
@@ -558,17 +558,24 @@
       <option name="project" value="LOCAL" />
       <updated>1507037078958</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="success">
+      <created>1507039938172</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1507039938172</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258257000" />
+    <option name="totallyTimeSpent" value="259445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="1" width="1282" height="985" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07446808" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32352942" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -636,13 +643,11 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="32" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/admin/resrvation/reservation_approved.php" />
-    <entry file="file:///run/media/kamui/GRMCULXFRER_EN_DVD/24-5-2017/New folder/V/reserve.php" />
     <entry file="file://$PROJECT_DIR$/application/views/web/reserve.php" />
     <entry file="file:///run/media/kamui/GRMCULXFRER_EN_DVD/24-5-2017/New folder/V/add_sessions_reserve.php" />
     <entry file="file://$PROJECT_DIR$/application/views/admin/wefak/add_sessions_reserve.php" />
@@ -936,14 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/vacations_approved.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1590">
-          <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/evaluation_setting.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -992,14 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="1972" column="23" selection-start-line="1972" selection-start-column="23" selection-end-line="1985" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/report_emp/all_departs_emp.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1013,8 +1002,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Administrative_affairs.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="824" column="40" selection-start-line="824" selection-start-column="20" selection-end-line="824" selection-end-column="40" />
+        <state relative-caret-position="402">
+          <caret line="863" column="77" selection-start-line="863" selection-start-column="63" selection-end-line="863" selection-end-column="77" />
           <folding>
             <element signature="e#3801#4823#0#PHP" expanded="true" />
             <element signature="e#4847#5501#0#PHP" expanded="true" />
@@ -1034,9 +1023,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/debts_report.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/employee_debts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/staff_evaluation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="-607">
           <caret line="210" column="19" selection-start-line="210" selection-start-column="19" selection-end-line="212" selection-end-column="37" />
           <folding>
             <element signature="n#div#0;n#!!top" expanded="false" />
@@ -1045,28 +1050,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/employee_debts.php">
+    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/vacations_approved.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="185" column="59" selection-start-line="185" selection-start-column="59" selection-end-line="185" selection-end-column="59" />
+        <state relative-caret-position="34">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
           <folding>
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#4;n#!!top" expanded="false" />
-            <marker date="1507039891536" expanded="true" signature="12433:13221" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="13406:15449" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="13467:15410" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="13596:15275" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="13658:14135" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="13729:13865" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="13936:14084" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="14197:14692" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="14268:14406" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="14477:14641" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="14754:15228" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="14825:14962" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="15033:15177" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="17470:17526" ph="..." />
-            <marker date="1507039891536" expanded="true" signature="17498:17526" ph="{...}" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/debts_approved.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="80" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="1761" column="55" selection-start-line="1761" selection-start-column="34" selection-end-line="1761" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
