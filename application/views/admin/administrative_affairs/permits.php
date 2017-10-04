@@ -62,7 +62,7 @@
     <!--------------------------------------------->
     <div class="form-group col-sm-5"></div>
     <div class="form-group col-sm-4">
-        <input type="submit" role="button" name="edit" value="حفظ" class="btn btn-success btn-rounded w-md m-b-5">
+        <input type="submit" role="button" name="edit" value="حفظ" class="btn btn-add  w-md m-b-5">
     </div>
     <div class="form-group col-sm-5"></div>
     <?php echo form_close()?>
@@ -139,7 +139,7 @@
 
     }else{
 
-        $html_tag='  <input type="submit" role="button" name="add" value="حفظ" class="btn btn-success btn-rounded w-md m-b-5">';
+        $html_tag='  <input type="submit" role="button" name="add" value="حفظ" class="btn btn-add  w-md m-b-5">';
 
     }
 

@@ -5,7 +5,7 @@
     <div class="col-sm-12 fadeInUp wow" data-wow-delay="0.3s">
         <div  class="panel panel-bd lobidisable lobipanel lobipanel-sortable ">
             <div class="panel-heading">
-                <h3 class="panel-title"></h3>
+                <h3 class="panel-title">تعديل أجازة</h3>
             </div>
             <div class="panel-body">
                 <div class="form-group col-sm-4">
@@ -96,7 +96,7 @@
     <!----------------------input------------------->
     <div class="form-group col-sm-5"></div>
     <div class="form-group col-sm-4">
-        <input type="submit" role="button" name="update" value="حفظ" class="btn btn-success btn-rounded w-md m-b-5">
+        <input type="submit" role="button" name="update" value="حفظ" class="btn btn-add  w-md m-b-5">
     </div>
     <div class="form-group col-sm-5"></div>
     <?php echo form_close()?>
@@ -108,7 +108,7 @@
     <div class="col-sm-12 fadeInUp wow" data-wow-delay="0.3s">
         <div  class="panel panel-bd lobidisable lobipanel lobipanel-sortable ">
             <div class="panel-heading">
-                <h3 class="panel-title"></h3>
+                <h3 class="panel-title"> إضافة أجازة</h3>
             </div>
             <div class="panel-body">
                 <?php  echo form_open_multipart('Administrative_affairs/add_vacation')?>
@@ -259,7 +259,7 @@
     <!----------------------input------------------->
     <div class="form-group col-sm-5"></div>
     <div class="form-group col-sm-4">
-        <input type="submit" role="button" name="add" value="حفظ" class="btn btn-success btn-rounded w-md m-b-5">
+        <input type="submit" role="button" name="add" value="حفظ" class="btn btn-add  w-md m-b-5">
     </div>
     <?php echo form_close()?>
     <div class="form-group col-sm-5"></div>
@@ -464,7 +464,7 @@
                                                 </p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
                                                 <a href="<?php echo base_url('Administrative_affairs/delete_vacation').'/'.$record->id ?>"><button type="button" class="btn btn-danger">حذف</button></a>
                                             </div>
                                         </div>

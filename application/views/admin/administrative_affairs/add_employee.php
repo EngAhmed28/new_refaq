@@ -191,7 +191,7 @@
     <!----------------------input------------------->
     <div class="form-group col-sm-5"></div>
     <div class="form-group col-sm-4">
-        <input type="submit" role="button" name="edit" value="حفظ" class="btn btn-success btn-rounded w-md m-b-5">
+        <input type="submit" role="button" name="edit" value="حفظ" class="btn btn-add  w-md m-b-5">
     </div>
     <div class="form-group col-sm-5"></div>
     <?php echo form_close()?>
@@ -354,7 +354,7 @@
                 <!----------------------input------------------->
                 <div class="form-group col-sm-5"></div>
                 <div class="form-group col-sm-4">
-                    <input type="submit" role="button" name="add" value="حفظ" class="btn btn-success btn-rounded w-md m-b-5">
+                    <input type="submit" role="button" name="add" value="حفظ" class="btn btn-add  w-md m-b-5">
                 </div>
     <?php echo form_close()?>
                 <div class="form-group col-sm-5"></div>
@@ -440,8 +440,28 @@
                                         <td><?php echo $a ?></td>
                                         <td><? echo $record->employee;?></td>
                                         <td> <a href="<?php echo base_url('Administrative_affairs/edit_employee').'/'.$record->id?>"><button type="button" class="btn btn-add btn-xs" data-toggle="modal" data-target="#update"><i class="fa fa-pencil"></i></button> </a>
-                                     <a href="<?php echo base_url('Administrative_affairs/delete_employee').'/'.$record->id ?>">     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#customer2"><i class="fa fa-trash-o"></i></button></a></td>
+                                            <a href="#"><button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modald<?php echo$record->id;?>"><i class="fa fa-trash-o"></i></button></a></td>
                                     </tr>
+                          <!------------------------>
+                          <div class="modal fade modal-danger" id="modald<?php echo$record->id;?>" tabindex="-1" role="dialog">
+                              <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                      <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <h1 class="modal-title">حذف موظف</h1>
+                                      </div>
+                                      <div class="modal-body">
+                                          <p>هل تريد حذف العنصر !
+                                          </p>
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          <a href="<?php echo base_url('Administrative_affairs/delete_employee').'/'.$record->id ?>"><button type="button" class="btn btn-danger">حذف</button></a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <!------------------------>
                           <?php $a++;endforeach;  ?>
                                     </tbody>
                                 </table>
