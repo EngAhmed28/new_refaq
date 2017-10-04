@@ -36,10 +36,10 @@
                                         <td ><?php echo date("Y-m-d",$record->debt_date)  ?></td>
                                         <td ><?php echo $record->value?></td>
                                         <td>
-                                            <a href="#"  data-toggle="modal" data-target="#accept<?php echo $record->debt_id?>" title="موافق">
-                                                <i class="fa fa-check fa-lg" aria-hidden="true"></i> </a>
+                                            <a href="#" data-toggle="modal" data-target="#accept-<?php echo $record->debt_id?>" title="موافق">
+                                                <button type="button" class="btn btn-success btn-circle m-b-5"><i class="glyphicon glyphicon-ok"></i></button> </a>
                                             <a href="#" data-toggle="modal" data-target="#refus<?php echo $record->debt_id?>" title="مرفوض">
-                                                <i class="fa fa-times" aria-hidden="true"></i> </a>
+                                                <button type="button" class="btn btn-danger btn-circle m-b-5"><i class="glyphicon glyphicon-remove"></i></button> </a>
                                         </td>
                                     </tr>
                                     <?php
@@ -75,9 +75,9 @@
                                             <td ><?php echo $record->value?></td>
                                             <td>
                                                 <a href="<?php  echo base_url().'Administrative_affairs/DoDebtsApproved/'.$record->debt_id.'/0'?>" title="تحويل">
-                                                    <i class="fa fa-repeat fa-lg" aria-hidden="true"></i> </a>
+                                                    <button type="button" class="btn btn-purple btn-circle m-b-5"><i class="glyphicon glyphicon-repeat"></i></button> </a>
                                                 <a href="#" data-toggle="modal" data-target="#refus<?php echo $record->debt_id?>" title="مرفوض">
-                                                    <i class="fa fa-times" aria-hidden="true"></i> </a>
+                                                    <button type="button" class="btn btn-danger btn-circle m-b-5"><i class="glyphicon glyphicon-remove"></i></button></a>
                                             </td>
                                         </tr>
                                         <?php $a++; endforeach;  ?>
@@ -113,10 +113,9 @@
                                             <td ><?php echo $record->value?></td>
                                             <td>
                                                 <a href="#"  data-toggle="modal" data-target="#accept<?php echo $record->debt_id?>" title="موافق">
-                                                    <i class="fa fa-check fa-lg" aria-hidden="true"></i> </a>
-
+                                                    <button type="button" class="btn btn-success btn-circle m-b-5"><i class="glyphicon glyphicon-ok"></i></button> </a>
                                                 <a href="<?php  echo base_url().'Administrative_affairs/DoDebtsApproved/'.$record->debt_id.'/0'?>"title="تحويل">
-                                                    <i class="fa fa-repeat fa-lg" aria-hidden="true"></i> </a>
+                                                    <button type="button" class="btn btn-purple btn-circle m-b-5"><i class="glyphicon glyphicon-repeat"></i></button> </a>
                                             </td>
                                         </tr>
                                         <?php
@@ -138,68 +137,59 @@
 
 <!-------------->
 <?php foreach($all_debts as $row):?>
-<div id="accept<?php echo $row->debt_id?>" class="modal fade" role="dialog">
+<div id="accept-<?php echo $row->debt_id?>" class="modal fade modal-success" id="modal-success" tabindex="-1" role="dialog">
     <?php echo form_open_multipart('Administrative_affairs/DoDebtsApproved/'.$row->debt_id.'/1')?>
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">قبول الطلب</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row form-group">
-                    <div class="col-xs-3">
-                        <label > الاسباب  </label>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h1 class="modal-title">قبول الطلب</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="row form-group">
+                        <div class="col-xs-3">
+                            <label > الاسباب  </label>
+                        </div>
+                        <div class="col-xs-9">
+                            <textarea name="reason" class="form-control"></textarea>
+                        </div>
                     </div>
-                    <div class="col-xs-9">
-                        <textarea name="reason" class="form-control"></textarea>
-                    </div>
-
-                    <div class="col-xs-3"></div>
-                    <div class="col-xs-6">
-                        <input class="btn  center-block" name="operation" type="submit" value=" قبول الطلب" />
-                    </div>
-
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
+                    <input  role="button" class="btn btn-success" name="operation" type="submit" value=" قبول الطلب" />
                 </div>
             </div>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
-        </div>
     </div>
+
 </div>
 <?php  echo form_close()?>
 </div>
 
-<div id="refus<?php echo $row->debt_id?>" class="modal fade" role="dialog">
+<div id="refus<?php echo $row->debt_id?>" class="modal fade modal-danger" id="modal-danger" tabindex="-1" role="dialog">
     <?php echo form_open_multipart('Administrative_affairs/DoDebtsApproved/'.$row->debt_id.'/2')?>
-    <div class="modal-dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h1 class="modal-title">رفض الطلب</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="row form-group">
+                        <div class="col-xs-3">
+                            <label > الاسباب  </label>
+                        </div>
+                        <div class="col-xs-9">
+                            <textarea name="reason" class="form-control"></textarea>
+                        </div>
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">رفض الطلب</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row form-group">
-                    <div class="col-xs-3">
-                        <label > الاسباب  </label>
-                    </div>
-                    <div class="col-xs-9">
-                        <textarea name="reason" class="form-control"></textarea>
-                    </div>
-
-                    <div class="col-xs-3"></div>
-                    <div class="col-xs-6">
-                        <input class="btn  center-block" name="operation" type="submit" value=" رفض الطلب" />
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
+                    <input  role="button" class="btn btn-danger" name="operation" type="submit" value=" رفض الطلب" />
+                </div>
             </div>
         </div>
     </div>

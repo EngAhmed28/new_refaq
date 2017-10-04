@@ -49,9 +49,9 @@
                                                 <td ><?php echo $record->to_date ?></td>
                                                 <td>
                                                     <a href="<?php  echo base_url().'Administrative_affairs/DoVacationsApproved/'.$record->id.'/1'?>" title="موافق">
-                                                        <button type="button" class="btn btn-info btn-circle m-b-5"><i class="glyphicon glyphicon-ok"></i></button> </a>
+                                                        <button type="button" class="btn btn-success btn-circle m-b-5"><i class="glyphicon glyphicon-ok"></i></button> </a>
                                                     <a href="<?php  echo base_url().'Administrative_affairs/DoVacationsApproved/'.$record->id.'/2'?>"title="مرفوض">
-                                                        <button type="button" class="btn btn-warning btn-circle m-b-5"><i class="glyphicon glyphicon-remove"></i></button> </a>
+                                                        <button type="button" class="btn btn-danger btn-circle m-b-5"><i class="glyphicon glyphicon-remove"></i></button> </a>
                                                 </td>
                                             </tr>
                                             <?php
@@ -98,7 +98,7 @@
                                                     <a href="<?php  echo base_url().'Administrative_affairs/DoVacationsApproved/'.$record->id.'/0'?>" title="استرجاع">
                                                         <button type="button" class="btn btn-purple btn-circle m-b-5"><i class="glyphicon glyphicon-repeat"></i></button></a>
                                                     <a href="<?php  echo base_url().'Administrative_affairs/DoVacationsApproved/'.$record->id.'/2'?>"title="مرفوض">
-                                                        <button type="button" class="btn btn-warning btn-circle m-b-5"><i class="glyphicon glyphicon-remove"></i></button> </a>
+                                                        <button type="button" class="btn btn-danger btn-circle m-b-5"><i class="glyphicon glyphicon-remove"></i></button> </a>
                                                 </td>
                                             </tr>
                                             <?php
@@ -142,12 +142,10 @@
                                                 <td ><?php echo $record->from_date ?></td>
                                                 <td ><?php echo $record->to_date ?></td>
                                                 <td>
-
-
                                                     <a href="<?php  echo base_url().'Administrative_affairs/DoVacationsApproved/'.$record->id.'/0'?>" title="استرجاع">
                                                         <button type="button" class="btn btn-purple btn-circle m-b-5"><i class="glyphicon glyphicon-repeat"></i></button></a>
                                                     <a href="<?php  echo base_url().'Administrative_affairs/DoVacationsApproved/'.$record->id.'/1'?>"title="موافق">
-                                                        <button type="button" class="btn btn-info btn-circle m-b-5"><i class="glyphicon glyphicon-ok"></i></button> </a>
+                                                        <button type="button" class="btn btn-success btn-circle m-b-5"><i class="glyphicon glyphicon-ok"></i></button> </a>
                                                 </td>
                                             </tr>
                                             <?php
