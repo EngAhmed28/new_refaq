@@ -891,7 +891,6 @@ public function suspend_vacation($id,$clas){
                 $arr_con["approved"]=0;
             }
              $data["table"]=$this->Debts_emp->type_depts_date($arr_con);
-           //  $this->test($this->db->last_query());
               $this->load->view('admin/administrative_affairs/debts/load_report',$data);
          }else{
         $data['title'] = 'تقرير طلبات السلف';

@@ -60,7 +60,10 @@
                                         </tbody>
                                     </table>
                                 <?php else: ?>
-                                    <div class="alert alert-danger" > لا يوجد اجازات واردة </div>
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong> لا يوجد اجازات واردة</strong>
+                                    </div>
                                 <?php endif; ?>
                             </div>
 
@@ -107,7 +110,10 @@
                                         </tbody>
                                     </table>
                                 <?php else: ?>
-                                    <div class="alert alert-danger" >لا يوجد اجازات مقبولة</div>
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>لا يوجد اجازات مقبولة</strong>
+                                    </div>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -154,7 +160,10 @@
                                         </tbody>
                                     </table>
                                 <?php else: ?>
-                                    <div class="alert alert-danger" > لا يوجد اجازات مرفوضة </div>
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>لا يوجد اجازات مرفوضة</strong>
+                                    </div>
                                 <?php endif; ?>
                             </div>
                         </div>

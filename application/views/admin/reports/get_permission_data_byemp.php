@@ -1,13 +1,9 @@
 
 <?php
 if(!empty($views) && isset($views) && $views!=null ):?>
-    <div class="col-xs-12">
-        <div class="panel-body">
-
-            <div class="fade in active">
                 <table id="example" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
-                    <tr>
+                    <tr class="info">
                         <th class="text-center">م</th>
                         <th class="text-center">رقم الإذن</th>
                         <th class="text-center">التاريخ</th>
@@ -16,12 +12,7 @@ if(!empty($views) && isset($views) && $views!=null ):?>
                     </tr>
                     </thead>
                     <tbody class="text-center">
-
-
-                    <?php
-                    $a=1;
-                    foreach ($views as $record ):
-                        ?>
+                    <?php $a=1;foreach ($views as $record ):?>
                         <tr>
                             <td><?php echo $a ?></td>
                             <td><?echo $record->permit_num; ?></td>
@@ -40,18 +31,11 @@ if(!empty($views) && isset($views) && $views!=null ):?>
                                 echo'  <td >موافق</td>';
                             }elseif ($record->permit_status ==2){
                                 echo'  <td >رفض</td>';
-                            }
-                            ?>
+                            } ?>
                         </tr>
-                        <?php
-                        $a++;
-                    endforeach;  ?>
-
+                        <?php $a++;endforeach;  ?>
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
 
 <?php else :?>
  <div class="col-lg-12 alert alert-danger" >

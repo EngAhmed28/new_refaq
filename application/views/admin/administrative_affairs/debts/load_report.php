@@ -1,9 +1,8 @@
 <?php if(isset($table)&& $table!=null && !empty($table) ):?>
-<div class="panel-body">
-<div class="fade in active">
+
     <table id="example" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
         <thead>
-        <tr>
+        <tr class="info">
         <th>م</th>
           <th class="text-center">اسم الموظف</th>
          <th  class="text-center">تاريخ السلفة </th>
@@ -36,6 +35,4 @@
         endforeach;  ?>
         </tbody>
     </table>
-</div>
-</div>
   <?php  endif; ?>

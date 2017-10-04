@@ -1,8 +1,10 @@
 
+
+
 <div class="col-sm-12 fadeInUp wow" data-wow-delay="0.3s">
     <div  class="panel panel-bd lobidisable lobipanel lobipanel-sortable ">
         <div class="panel-heading">
-            <h3 class="panel-title">اذونات الموظفين</h3>
+            <h3 class="panel-title">تقرير الأذونات خلال فترة</h3>
         </div>
         <div class="panel-body">
             <div class="form-group col-sm-4">
@@ -14,14 +16,13 @@
                 <input type="text" name="date_to"id="date_to" class=" some_class_2 form-control half input-style" placeholder="شهر/يوم/سنة" required="" id="some_class_1">
             </div>
             <div class="form-group col-sm-4">
-                <label class="label label-green  half">إسم الموظف</label>
-                <select class="choose-date selectpicker form-control half" name="emp" id="emp"  required data-show-subtext="true" data-live-search="true" >
+                <label class="label label-green  half">نوع الأجازة</label>
+                <select class="choose-date selectpicker form-control half" name="type" id="type"  required data-show-subtext="true" data-live-search="true" >
                     <option value="">إختر  </option>
-                    <?php  if(!empty($emp)):
-                        foreach ($emp as $row):?>
-                            <option value="<?php echo $row->id;?>"><?php echo $row->employee;?>  </option>
-                        <?php endforeach; endif;?>
-                </select>
+                    <option value="1">أجازة سنوية </option>
+                    <option value="2"> أجازة مرضية </option>
+                    <option value="3"> أجازة بدون أجر </option>
+                    <option value="4"> الكل </option>
                 </select>
             </div>
         </div>
@@ -106,12 +107,12 @@
     function lood(){
         var num1=   $('#date_from').val();
         var num2=   $('#date_to').val();
-        var emp=   $('#emp').val();
-        if( num1 != '' && num2 != '' && emp != ''){
-            var dataString = 'form_date=' + num1 + '&to_date=' + num2 + '&emp=' + emp;
+        var type=   $('#type').val();
+        if( num1 != '' && num2 != '' && type != ''){
+            var dataString = 'form_date=' + num1 + '&to_date=' + num2 + '&type=' + type;
             $.ajax({
                 type:'post',
-                url: '<?php echo base_url() ?>Administrative_affairs/all_permissions_emp',
+                url: '<?php echo base_url() ?>Administrative_affairs/all_vacations_period',
                 data:dataString,
                 dataType: 'html',
                 cache:false,
@@ -123,6 +124,4 @@
         }
     }
 </script>
-
-
 

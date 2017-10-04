@@ -1,13 +1,9 @@
 
 <?php
 if(!empty($views) && isset($views) && $views!=null ):?>
-    <div class="col-xs-12">
-        <div class="panel-body">
-
-            <div class="fade in active">
                 <table id="example" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
-                    <tr>
+                    <tr class="info">
                         <th class="text-center">م</th>
                         <th class="text-center">إسم الموظف</th>
                         <th class="text-center">نوع الإذن</th>
@@ -50,9 +46,6 @@ if(!empty($views) && isset($views) && $views!=null ):?>
 
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
 <?php else :?>
  <div class="col-lg-12 alert alert-danger" >
       لا يوجد اذونات خلال الفترة

@@ -1,4 +1,5 @@
 
+
 <div class="col-sm-12 fadeInUp wow" data-wow-delay="0.3s">
     <div  class="panel panel-bd lobidisable lobipanel lobipanel-sortable ">
         <div class="panel-heading">
@@ -111,7 +112,7 @@
             var dataString = 'form_date=' + num1 + '&to_date=' + num2 + '&emp=' + emp;
             $.ajax({
                 type:'post',
-                url: '<?php echo base_url() ?>Administrative_affairs/all_permissions_emp',
+                url: '<?php echo base_url() ?>Administrative_affairs/all_vacations_emp',
                 data:dataString,
                 dataType: 'html',
                 cache:false,
@@ -123,6 +124,9 @@
         }
     }
 </script>
+
+
+
 
 
 

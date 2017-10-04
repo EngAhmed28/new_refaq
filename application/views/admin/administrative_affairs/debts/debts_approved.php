@@ -48,7 +48,10 @@
                                 </tbody>
                             </table>
                         <?php else: ?>
-                            <div class="alert alert-danger" > لايوجد طلبات وارده </div>
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong> لايوجد طلبات وارده</strong>
+                            </div>
                         <?php endif; ?>
                     </div>
                     <div class="tab-pane fade" id="tab4">
@@ -84,7 +87,10 @@
                                     </tbody>
                                 </table>
                             <?php else: ?>
-                                <div class="alert alert-danger" >لايوجد طلبات وارده</div>
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong> لايوجد طلبات موافق عليها</strong>
+                                </div>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -124,7 +130,10 @@
                                     </tbody>
                                 </table>
                             <?php else: ?>
-                                <div class="alert alert-danger" > لايوجد طلبات وارده  </div>
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong> لايوجد طلبات مرفوضة</strong>
+                                </div>
                             <?php endif; ?>
                         </div>
                     </div>
