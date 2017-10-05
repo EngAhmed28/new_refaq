@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54fd9d53-4765-4638-a0ff-79308d64d493" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/penalty/get_departs2.php" />
+    <list default="true" id="54fd9d53-4765-4638-a0ff-79308d64d493" name="Default" comment="success">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/admin/cars/main_tabs1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/admin/cars/main_tabs2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/admin/cars/main_tabs3.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/R_cars.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/R_cars.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/R_driver_status.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/R_driver_status.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/R_drivers.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/R_drivers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/R_violation.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/R_violation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/car.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/car.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/car_crashes.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/car_crashes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/crashes_index.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/crashes_index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/details.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/driver.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/insurance.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/insurance.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/load_crashes.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/load_crashes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/load_violation.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/load_violation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/orders.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/orders.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/cars/violation.php" afterPath="$PROJECT_DIR$/application/views/admin/cars/violation.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,30 +45,7 @@
     <favorites_list name="tatawahail_h" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="load_dep.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4-10-2017/V/administrative_affairs/debts/load_dep.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="get_departs2.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/penalty/get_departs2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1507106919064" expanded="true" signature="562:627" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -61,20 +54,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/models/Abouts.php" />
-        <option value="$PROJECT_DIR$/application/views/web/home.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Web.php" />
-        <option value="$PROJECT_DIR$/application/models/Sessions_reserve.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/requires/sidebar.php" />
-        <option value="$PROJECT_DIR$/application/views/index_without_sidebar.php" />
-        <option value="$PROJECT_DIR$/application/config/config.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/home.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Dashboard.php" />
-        <option value="$PROJECT_DIR$/asisst/admin_asset/css/style.css" />
-        <option value="$PROJECT_DIR$/application/views/admin/users/login.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/requires/header.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/requires/header_home.php" />
-        <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/get_depart.php" />
         <option value="$PROJECT_DIR$/application/models/administrative_affairs_models/Employee.php" />
         <option value="$PROJECT_DIR$/../Panoram_prog2/application/views/admin/administrative_affairs/permits.php" />
@@ -82,7 +61,6 @@
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/get_emp_assigned.php" />
         <option value="$PROJECT_DIR$/application/views/admin/requires/footer.php" />
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/emp_vacations_data.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/form.php" />
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/attendance_upload.php" />
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/emp_attendance.php" />
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/evaluation_setting.php" />
@@ -93,7 +71,6 @@
         <option value="$PROJECT_DIR$/application/views/admin/report_emp/all_departs_emp.php" />
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/employee_debts.php" />
         <option value="$PROJECT_DIR$/application/views/admin/penalty2/add_penalty.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Administrative_affairs.php" />
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/load_report.php" />
         <option value="$PROJECT_DIR$/application/views/admin/reports/all_permissions_alltime.php" />
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/debts/debts_report.php" />
@@ -112,6 +89,22 @@
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/add_employee.php" />
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/add_vacation.php" />
         <option value="$PROJECT_DIR$/application/views/admin/administrative_affairs/permits.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Administrative_affairs.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/form.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/car.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/details.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/insurance.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/driver.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/orders.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/violation.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/load_crashes.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/car_crashes.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/crashes_index.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/R_drivers.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/R_cars.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/R_driver_status.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/R_violation.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/cars/load_violation.php" />
       </list>
     </option>
   </component>
@@ -156,7 +149,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -251,7 +243,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reports" />
+              <option name="myItemId" value="cars" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -269,41 +261,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="report_emp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="new_refaq" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="new_refaq" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="penalty" />
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -325,26 +283,9 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="new_refaq" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="new_refaq" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="4-10-2017" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="V" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -358,8 +299,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\prog\wamp\www\new_refaq\application\views\admin\penalty" />
       <recent name="D:\prog\wamp\www\new_refaq\4-10-2017\V" />
+      <recent name="D:\prog\wamp\www\new_refaq\application\views\admin\penalty" />
       <recent name="D:\prog\wamp\www\new_refaq\application\views\admin\administrative_affairs" />
       <recent name="D:\prog\wamp\www\new_refaq\application\views\admin" />
       <recent name="D:\prog\wamp\www\new_refaq\application\views\admin\requires" />
@@ -480,7 +421,10 @@
       <workItem from="1506857075746" duration="8042000" />
       <workItem from="1506930990188" duration="22690000" />
       <workItem from="1507017664811" duration="16088000" />
-      <workItem from="1507102882715" duration="12092000" />
+      <workItem from="1507102882715" duration="13879000" />
+      <workItem from="1507123691584" duration="603000" />
+      <workItem from="1507189492406" duration="581000" />
+      <workItem from="1507190797210" duration="14853000" />
     </task>
     <task id="LOCAL-00001" summary="success">
       <created>1507037078958</created>
@@ -524,17 +468,24 @@
       <option name="project" value="LOCAL" />
       <updated>1507117894366</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="success">
+      <created>1507118062615</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1507118062615</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271546000" />
+    <option name="totallyTimeSpent" value="289370000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="1" width="1282" height="985" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27905074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42389524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32352942" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.048281506" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -602,195 +553,15 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="38" />
+      <option name="time" value="39" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/get_depart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/council/add_decisions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2694">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/cities/add_city.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2033">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/about/about.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/about/news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2157">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/administrative_affairs_models/Administrative_affairs_setting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Panoram_prog2/application/views/admin/administrative_affairs/permits.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="286" column="108" selection-start-line="286" selection-start-column="108" selection-end-line="286" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/newfolder/permits.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Difined_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/permits_reports/report2.php" />
-    <entry file="file://$PROJECT_DIR$/application/models/administrative_affairs_models/Employee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="59" column="7" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/get_emp_assigned.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/emp_vacations_data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-595">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <marker date="1506951624629" expanded="true" signature="53:170" ph="SELECT * FRO... vacations" />
-            <marker date="1506951624629" expanded="true" signature="919:963" ph="SELECT * FRO... employees" />
-            <marker date="1506951624629" expanded="true" signature="1151:1213" ph="SELECT * FRO... administrative_affairs_settings" />
-            <marker date="1506951624629" expanded="true" signature="1792:1798" ph="..." />
-            <marker date="1506951624629" expanded="true" signature="1802:1844" ph="..." />
-            <marker date="1506951624629" expanded="true" signature="2102:2174" ph="SELECT * FRO... employees" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/requires/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1090">
-          <caret line="365" column="33" selection-start-line="365" selection-start-column="33" selection-end-line="365" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/requires/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="152" column="20" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Panoram_prog2/application/views/admin/administrative_affairs/add_vacation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="420" column="20" selection-start-line="420" selection-start-column="20" selection-end-line="427" selection-end-column="42" />
-          <folding>
-            <marker date="1506259890000" expanded="true" signature="11414:11471" ph="SELECT * FRO... vacations" />
-            <marker date="1506259890000" expanded="true" signature="13057:13317" ph="..." />
-            <marker date="1506259890000" expanded="true" signature="13777:13849" ph="SELECT * FRO... employees" />
-            <marker date="1506259890000" expanded="true" signature="17618:17694" ph="SELECT * FRO... vacations" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/emp_attendance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="56" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
-          <folding>
-            <marker date="1507020944247" expanded="true" signature="6834:7333" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/attendance_upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="123" selection-start-line="13" selection-start-column="112" selection-end-line="13" selection-end-column="123" />
-          <folding>
-            <marker date="1507020893088" expanded="true" signature="5900:6429" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/permits_reports/get_report.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/permits_reports/report.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="84" column="79" selection-start-line="84" selection-start-column="79" selection-end-line="84" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/web-forms2.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-448">
-          <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/penalty2/get_departs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/penalty2/add_penalty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/penalty/add_penalty.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
           <caret line="236" column="49" selection-start-line="236" selection-start-column="30" selection-end-line="236" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -798,10 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="37" column="61" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
-          <folding>
-            <marker date="1507037465129" expanded="true" signature="5145:5196" ph="SELECT * FRO... department_jobs" />
-            <marker date="1507037465129" expanded="true" signature="5743:5788" ph="SELECT * FRO... employees" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -809,7 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -817,9 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="79" column="50" selection-start-line="79" selection-start-column="50" selection-end-line="79" selection-end-column="50" />
-          <folding>
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -827,7 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -835,7 +597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -843,9 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="104" selection-end-column="10" />
-          <folding>
-            <element signature="n#div#4;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -853,7 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1196">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="22" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -861,7 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -869,7 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2244">
           <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -877,7 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -885,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="75" selection-start-line="13" selection-start-column="75" selection-end-line="13" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -893,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -901,23 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="135" column="38" selection-start-line="135" selection-start-column="38" selection-end-line="135" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/all_vacations_period.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="102" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="426" column="40" selection-start-line="426" selection-start-column="17" selection-end-line="426" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1071">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -933,10 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1955">
           <caret line="115" column="1" selection-start-line="115" selection-start-column="1" selection-end-line="115" selection-end-column="1" />
-          <folding>
-            <marker date="1507117491556" expanded="true" signature="5060:5100" ph="SELECT * FRO... mon_rewards" />
-            <marker date="1507117491556" expanded="true" signature="5383:5466" ph="SELECT * FRO... penalty" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -944,51 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="581">
           <caret line="50" column="88" selection-start-line="50" selection-start-column="88" selection-end-line="50" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/add_employee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7650">
-          <caret line="450" column="74" selection-start-line="450" selection-start-column="74" selection-end-line="450" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/vacations_approved.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-417">
-          <caret line="112" column="27" selection-start-line="112" selection-start-column="27" selection-end-line="115" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Administrative_affairs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="973" column="0" selection-start-line="973" selection-start-column="0" selection-end-line="973" selection-end-column="0" />
-          <folding>
-            <element signature="e#3801#4823#0#PHP" expanded="true" />
-            <element signature="e#4847#5501#0#PHP" expanded="true" />
-            <element signature="e#6955#8106#0#PHP" expanded="true" />
-            <element signature="e#9815#11253#0#PHP" expanded="true" />
-            <element signature="e#16758#17084#0#PHP" expanded="true" />
-            <element signature="e#17545#21330#0#PHP" expanded="true" />
-            <element signature="e#22995#23518#0#PHP" expanded="true" />
-            <element signature="e#27853#28181#0#PHP" expanded="true" />
-            <element signature="e#29504#29745#0#PHP" expanded="true" />
-            <element signature="e#29813#30346#0#PHP" expanded="true" />
-            <element signature="e#31337#32666#0#PHP" expanded="true" />
-            <element signature="e#35296#36498#0#PHP" expanded="true" />
-            <element signature="e#36557#37480#0#PHP" expanded="true" />
-            <element signature="e#37485#38229#0#PHP" expanded="true" />
-            <element signature="e#38234#38920#0#PHP" expanded="true" />
-            <element signature="e#39449#40603#0#PHP" expanded="true" />
-            <element signature="e#43779#44149#0#PHP" expanded="true" />
-            <element signature="e#44367#45418#0#PHP" expanded="true" />
-            <marker date="1507109997759" expanded="true" signature="20417:20577" ph="SELECT * FRO... vacations" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -996,12 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="466" column="120" selection-start-line="466" selection-start-column="120" selection-end-line="466" selection-end-column="120" />
-          <folding>
-            <marker date="1507117812518" expanded="true" signature="11661:11718" ph="SELECT * FRO... vacations" />
-            <marker date="1507117812518" expanded="true" signature="13225:13485" ph="..." />
-            <marker date="1507117812518" expanded="true" signature="13888:13960" ph="SELECT * FRO... employees" />
-            <marker date="1507117812518" expanded="true" signature="22934:23010" ph="SELECT * FRO... vacations" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1009,7 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="34" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,25 +695,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2142">
           <caret line="130" column="58" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
-          <folding>
-            <element signature="e#6209#13605#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/permits.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="64" column="86" selection-start-line="64" selection-start-column="86" selection-end-line="64" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/4-10-2017/V/administrative_affairs/debts/load_dep.php">
+    <entry file="file://$PROJECT_DIR$/4-10-2017/V/reports/load.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1043,9 +709,303 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4-10-2017/V/administrative_affairs/debts/load_dep.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Administrative_affairs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="935" column="0" selection-start-line="935" selection-start-column="0" selection-end-line="935" selection-end-column="0" />
           <folding>
-            <marker date="1507106919064" expanded="true" signature="562:627" ph="..." />
+            <marker date="1507109997759" expanded="true" signature="20417:20577" ph="SELECT * FRO... vacations" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="122" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="526" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/cars/Details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#Details#0;n#!!top" expanded="false" />
+            <element signature="n#insert#0;n#Details#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/cars/Car.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#Car#0;n#!!top" expanded="false" />
+            <element signature="n#select#0;n#Car#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="336" column="1" selection-start-line="336" selection-start-column="1" selection-end-line="336" selection-end-column="1" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#8;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#8;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#8;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#1;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#8;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/insurance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="58" column="63" selection-start-line="58" selection-start-column="63" selection-end-line="58" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/driver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3740">
+          <caret line="220" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/add_employee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="28" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/permits.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="246" column="36" selection-start-line="246" selection-start-column="36" selection-end-line="246" selection-end-column="176" />
+          <folding>
+            <element signature="n#div#1;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#8;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/load_crashes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-256">
+          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+          <folding>
+            <marker date="1507204237290" expanded="true" signature="182:269" ph="..." />
+            <marker date="1507204237290" expanded="true" signature="333:564" ph="..." />
+            <marker date="1507204237290" expanded="true" signature="646:1228" ph="..." />
+            <marker date="1507204237290" expanded="true" signature="906:1205" ph="..." />
+            <marker date="1507204237290" expanded="true" signature="1302:1582" ph="..." />
+            <marker date="1507204237290" expanded="true" signature="1438:1491" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/council/add_decisions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/services/car.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/R_cars.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="92" column="22" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
+          <folding>
+            <marker date="1507207298984" expanded="true" signature="4880:5278" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/vacations_approved.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="65" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/crashes_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+          <folding>
+            <marker date="1507206847424" expanded="true" signature="1956:2170" ph="..." />
+            <marker date="1507206847424" expanded="true" signature="2762:3379" ph="..." />
+            <marker date="1507206847424" expanded="true" signature="5495:5710" ph="..." />
+            <marker date="1507206847424" expanded="true" signature="6336:6964" ph="..." />
+            <marker date="1507206847424" expanded="true" signature="9166:9381" ph="..." />
+            <marker date="1507206847424" expanded="true" signature="10007:10634" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/car_crashes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-646">
+          <caret line="190" column="109" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="109" />
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#div#2;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1507205981847" expanded="true" signature="12152:12358" ph="..." />
+            <marker date="1507205981847" expanded="true" signature="14398:15572" ph="..." />
+            <marker date="1507205981847" expanded="true" signature="14485:15572" ph="..." />
+            <marker date="1507205981847" expanded="true" signature="14561:15572" ph="..." />
+            <marker date="1507205981847" expanded="true" signature="14640:14980" ph="..." />
+            <marker date="1507205981847" expanded="true" signature="15057:15257" ph="..." />
+            <marker date="1507205981847" expanded="true" signature="15117:15198" ph="..." />
+            <marker date="1507205981847" expanded="true" signature="15336:15572" ph="..." />
+            <marker date="1507205981847" expanded="true" signature="16432:16524" ph="..." />
+            <marker date="1507205981847" expanded="true" signature="16461:16524" ph="{...}" />
+            <marker date="1507205981847" expanded="true" signature="16494:16524" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/car.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/orders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="332" column="0" selection-start-line="332" selection-start-column="0" selection-end-line="333" selection-end-column="217" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-986">
+          <caret line="571" column="41" selection-start-line="571" selection-start-column="35" selection-end-line="571" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/load_violation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding>
+            <marker date="1507208172910" expanded="true" signature="531:814" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/R_violation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+          <folding>
+            <element signature="n#script#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/administrative_affairs/all_vacations_period.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="34" column="39" selection-start-line="0" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="817" column="29" selection-start-line="817" selection-start-column="18" selection-end-line="817" selection-end-column="29" />
+          <folding>
+            <element signature="e#18386#19016#0#PHP" expanded="true" />
+            <element signature="e#19872#20473#0#PHP" expanded="true" />
+            <element signature="e#21277#22257#0#PHP" expanded="true" />
+            <element signature="e#23237#23828#0#PHP" expanded="true" />
+            <element signature="e#24653#25397#0#PHP" expanded="true" />
+            <element signature="e#26781#27444#0#PHP" expanded="true" />
+            <element signature="e#28498#29823#0#PHP" expanded="true" />
+            <element signature="e#29833#30265#0#PHP" expanded="true" />
+            <element signature="e#31115#31841#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/R_drivers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding>
+            <marker date="1507207098390" expanded="true" signature="4760:5098" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/R_driver_status.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+          <folding>
+            <marker date="1507207299019" expanded="true" signature="5777:6089" ph="..." />
+            <marker date="1507207299019" expanded="true" signature="6317:6612" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/violation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="59" column="113" selection-start-line="59" selection-start-column="113" selection-end-line="59" selection-end-column="113" />
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#div#5;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#5;n#div#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/load.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/cars/home_cars.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1683">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

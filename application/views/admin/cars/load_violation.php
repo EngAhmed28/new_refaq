@@ -1,15 +1,12 @@
-<?php 
- //var_dump($table);die;
-if(isset($table)&& $table!=null):
-?>
+<?php if(isset($table)&& $table!=null):?>
 <table id="example" class=" display table table-bordered table-striped table-hover">
     <thead>
-        <tr>
-            <th>#</th>
-            <th>التاريخ</th>
-            <th>رقم إيصال المخالفة</th>
-            <th>إسم السائق</th>
-            <th>الملاحظة</th>
+        <tr class="info">
+            <th class="text-center">م</th>
+            <th class="text-center">التاريخ</th>
+            <th class="text-center">رقم إيصال المخالفة</th>
+            <th class="text-center">إسم السائق</th>
+            <th class="text-center">الملاحظة</th>
         </tr>
     </thead>
     <tbody>
@@ -27,7 +24,9 @@ if(isset($table)&& $table!=null):
     </tbody>
 </table>
 <?php 
-else:
-    echo '<div class="alert alert-danger" >لا توجد مخالفات</div>';
-endif;
-?>
+else:?>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>لا توجد مخالفات</strong>
+    </div>
+<?php endif;?>
