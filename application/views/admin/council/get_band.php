@@ -1,6 +1,8 @@
 <?php
 $val = $_POST['band_num'];
+
 if($val>10){
+
     echo '<div class="alert alert-danger" >
               أقصى عدد 10
               </div>';
@@ -9,39 +11,27 @@ if($val>10){
 elseif($val<=10)
 {
     for($i=1;$i<=$val;$i++){
-        $num =$num_item;
-        echo '<div class="col-md-6  col-sm-12 col-xs-12 inner-side r-data">
-            <div class="col-xs-12">
-                <div class="col-xs-6">
-                    <h4 class="r-h4">رقم البند '.$i.' </h4>
-                </div>
-                <div class="col-xs-6 r-input">
-                   <input type="text" name="item_num'.$i.'" class="form-control" readonly   value="'.($num+$i).'" />
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-12 col-xs-12 inner-side r-data">
-				<div class="col-xs-12">
-							<div class="col-xs-4">
-								<h4 class="r-h4">  البند '.$i.'  </h4>
-							</div>
-							<div class="col-xs-8 r-input">
-								<textarea class="r-textarea" name="item_title'.$i.'" id="item_title" ></textarea>
-						</div>
-				</div>
-        </div>';
-         if(isset($_POST['val'])):
-        echo'<div class="col-md-6 col-sm-12 col-xs-12 inner-side r-data">
-				<div class="col-xs-12">
-							<div class="col-xs-4">
-								<h4 class="r-h4">  القرار عليه '.$i.'  </h4>
-							</div>
-							<div class="col-xs-8 r-input">
-								<textarea class="r-textarea" name="decision_title'.$i.'" id="decision_title" ></textarea>
-						</div>
-				</div>
-        </div><br><br><br><br><br><br><br><br>';
-       endif;
+        $num =$num_item;?>
+
+
+
+
+<div class="form-group col-sm-6">
+    <label class="label label-green  half">رقم البند<?php echo $i;?></label>
+    <input type="text" name="item_num<?php echo $i;?>" class="form-control half input-style" readonly   value="<?php echo ($num+$i);?>" />
+</div>
+
+<div class="form-group col-sm-6">
+    <label class="label label-green  half">البند<?php echo $i;?></label>
+    <textarea class="form-control"  style="margin: 0px; width: 506px; height: 60px;"  name="item_title<?php echo $i;?>" id="item_title" ></textarea>
+</div>
+<?php if(isset($_POST['val'])):?>
+<div class="form-group col-sm-6">
+    <label class="label label-green  half">القرار عليه<?php echo $i;?></label>
+    <textarea class="form-control"  style="margin: 0px; width: 506px; height: 60px;"  name="decision_title<?php echo $i;?>" id="decision_title" ></textarea>
+</div>
+<?php endif;
+
   }
 
 }
