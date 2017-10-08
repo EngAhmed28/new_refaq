@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54fd9d53-4765-4638-a0ff-79308d64d493" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/council/add_decisions.php" afterPath="$PROJECT_DIR$/application/views/admin/council/add_decisions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/council/add_time_table.php" afterPath="$PROJECT_DIR$/application/views/admin/council/add_time_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/council/follow_up.php" afterPath="$PROJECT_DIR$/application/views/admin/council/follow_up.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/council/get_band.php" afterPath="$PROJECT_DIR$/application/views/admin/council/get_band.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/council/get_council_data.php" afterPath="$PROJECT_DIR$/application/views/admin/council/get_council_data.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/council/get_items_decisions.php" afterPath="$PROJECT_DIR$/application/views/admin/council/get_items_decisions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/council/main_tabs.php" afterPath="$PROJECT_DIR$/application/views/admin/council/main_tabs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/council/management-add-manage.php" afterPath="$PROJECT_DIR$/application/views/admin/council/management-add-manage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/council/management-add-member.php" afterPath="$PROJECT_DIR$/application/views/admin/council/management-add-member.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/council/minutes_and_decisions.php" afterPath="$PROJECT_DIR$/application/views/admin/council/minutes_and_decisions.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/admin/council/main_tabs.php" afterPath="" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +32,8 @@
       <file leaf-file-name="form.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/admin/form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="1107" column="111" selection-start-line="1107" selection-start-column="89" selection-end-line="1107" selection-end-column="111" />
+            <state relative-caret-position="72">
+              <caret line="1099" column="8" selection-start-line="1099" selection-start-column="8" selection-end-line="1099" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -222,32 +212,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="new_refaq" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="new_refaq" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="council" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -460,7 +424,7 @@
       <workItem from="1507189492406" duration="581000" />
       <workItem from="1507190797210" duration="15488000" />
       <workItem from="1507362434086" duration="965000" />
-      <workItem from="1507448805090" duration="11622000" />
+      <workItem from="1507448805090" duration="11744000" />
     </task>
     <task id="LOCAL-00001" summary="success">
       <created>1507037078958</created>
@@ -518,11 +482,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507208499224</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="success">
+      <created>1507462691973</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1507462691973</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="302592000" />
+    <option name="totallyTimeSpent" value="302714000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="1" width="1278" height="985" extended-state="0" />
@@ -1020,8 +991,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="1107" column="111" selection-start-line="1107" selection-start-column="89" selection-end-line="1107" selection-end-column="111" />
+        <state relative-caret-position="72">
+          <caret line="1099" column="8" selection-start-line="1099" selection-start-column="8" selection-end-line="1099" selection-end-column="8" />
           <folding />
         </state>
       </provider>
