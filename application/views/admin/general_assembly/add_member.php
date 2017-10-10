@@ -1,169 +1,213 @@
-<div class="r-program">
-    <div class="container">
-        <div class="col-sm-11 col-xs-12">
-            <?php $this->load->view('admin/general_assembly/main_tabs'); ?>
+<!--------------------------------------------------------------------->
 
-            <div class="details-resorce">
-                <div class="col-xs-12 r-inner-details">
-                    <?php  echo form_open_multipart('General_assembly/add_member')?>
-                    <div class="col-xs-12">
-                        <div class="col-md-4  col-sm-12 col-xs-12 inner-side r-data">
-                            <div class="col-xs-12">
-                                <div class="col-xs-6">
-                                    <h4 class="r-h4"> إسم العضو </h4>
-                                </div>
-                                <div class="col-xs-6 r-input">
-                                    <input type="text" name="name" id="name" class="form-control" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4  col-sm-12 col-xs-12 inner-side r-data">
-                            <div class="col-xs-12">
-                                <div class="col-xs-6">
-                                    <h4 class="r-h4"> رقم الهاتف </h4>
-                                </div>
-                                <div class="col-xs-6 r-input">
-                                    <input type="number" id="mobile" name="mobile" class="form-control" required>
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4  col-sm-12 col-xs-12 inner-side r-data">
-                            <div class="col-xs-12">
-                                <div class="col-xs-6">
-                                    <h4 class="r-h4">العنوان </h4>
-                                </div>
-                                <div class="col-xs-6 r-input">
-                                    <input type="text" id="address" name="address" class="form-control" required>
+<!------------------------------------------------>
+<?php  echo form_open_multipart('General_assembly/add_member')?>
 
-                                </div>
-                            </div>
-                        </div>
+    <div class="col-sm-12 fadeInUp wow" data-wow-delay="0.3s">
+        <div  class="panel panel-bd lobidisable lobipanel lobipanel-sortable ">
+            <div class="panel-heading">
+                <h3 class="panel-title">أعضاء الجمعية العمومية</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group col-sm-4">
+                    <label class="label label-green  half">إسم العضو</label>
+                    <input type="text" class="form-control half input-style" name="name" id="name"  required>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label class="label label-green  half">رقم الهاتف</label>
+                    <input class="form-control half input-style" type="number" id="mobile" name="mobile"  required>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label class="label label-green  half">العنوان</label>
+                    <input class="form-control half input-style" type="text" id="address" name="address"   required>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label class="label label-green  half">الإيميل</label>
+                    <input class="form-control half input-style" type="email"  name="email" id="email"  required>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label class="label label-green  half"> تاريخ التعيين</label>
+                    <input type="text" name="date_of_hiring"  class=" some_class_2 form-control half input-style" placeholder="شهر / يوم / سنة"  id="some_class_1">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!----------------------input------------------->
+    <div class="form-group col-sm-5"></div>
+    <div class="form-group col-sm-4">
+        <input type="submit" role="button" name="save" value="حفظ" class="btn btn-add  w-md m-b-5">
+    </div>
+    <div class="form-group col-sm-5"></div>
+    <?php echo form_close()?>
+    <!----------------------input------------------->
+
+
+    <?php if(isset($records)&&$records!=null):?>
+        <div class="col-sm-12">
+            <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable ">
+                <div class="panel-heading">
+                    <div class="btn-group" id="buttonexport">
+                        <a href="#">
+                        </a>
                     </div>
-                    <div class="col-xs-12 ">
-
-                        <div class="col-md-4  col-sm-12 col-xs-12 inner-side r-data">
-                            <div class="col-xs-12">
-                                <div class="col-xs-6">
-                                    <h4 class="r-h4"> الإيميل  </h4>
-                                </div>
-                                <div class="col-xs-6 r-input">
-                                    <input type="email" name="email" id="email" class="form-control" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4  col-sm-12 col-xs-12 inner-side r-data">
-                            <div class="col-xs-12">
-                                <div class="col-xs-6">
-                                    <h4 class="r-h4"> تاريخ التعيين  </h4>
-                                </div>
-                                <div class="col-xs-6 r-input">
-                                    <div class="docs-datepicker">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control docs-date" name="date_of_hiring" placeholder="شهر / يوم / سنة ">
+                </div>
+                <div class="panel-body">
+                    <div class="btn-group">
+                        <button class="btn btn-exp btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i> Export Table Data</button>
+                        <ul class="dropdown-menu exp-drop" role="menu">
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'json',escape:'false'});">
+                                    <img src="img/json.png" width="24" alt="logo"> JSON</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'json',escape:'false',ignoreColumn:'[2,3]'});">
+                                    <img src="img/json.png" width="24" alt="logo"> JSON (ignoreColumn)</a>
+                            </li>
+                            <li><a href="#" onclick="$('#dataTableExample1').tableExport({type:'json',escape:'true'});">
+                                    <img src="img/json.png" width="24" alt="logo"> JSON (with Escape)</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#" onclick="$('#dataTableExample1').tableExport({type:'xml',escape:'false'});">
+                                    <img src="img/xml.png" width="24" alt="logo"> XML</a>
+                            </li>
+                            <li><a href="#" onclick="$('#dataTableExample1').tableExport({type:'sql'});">
+                                    <img src="img/sql.png" width="24" alt="logo"> SQL</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'csv',escape:'false'});">
+                                    <img src="img/csv.png" width="24" alt="logo"> CSV</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'txt',escape:'false'});">
+                                    <img src="img/txt.png" width="24" alt="logo"> TXT</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'excel',escape:'false'});">
+                                    <img src="img/xls.png" width="24" alt="logo"> XLS</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'doc',escape:'false'});">
+                                    <img src="img/word.png" width="24" alt="logo"> Word</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'powerpoint',escape:'false'});">
+                                    <img src="img/ppt.png" width="24" alt="logo"> PowerPoint</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'png',escape:'false'});">
+                                    <img src="img/png.png" width="24" alt="logo"> PNG</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'pdf',pdfFontSize:'7',escape:'false'});">
+                                    <img src="img/pdf.png" width="24" alt="logo"> PDF</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
+                            <thead>
+                            <tr class="info">
+                                <th class="text-center"> م </th>
+                                <th class="text-center">إسم العضو</th>
+                                <th class="text-center">العنوان</th>
+                                <th class="text-center">التفاصيل</th>
+                                <th class="text-center">الإجراء</th>
+                            </thead>
+                            <tbody class="text-center">
+                            <?php $a=1;foreach ($records as $record ):?>
+                                <tr>
+                                    <td><?php echo $a ?> </td>
+                                    <td><?php echo $record->name;?></td>
+                                    <td><?php echo $record->address;?></td>
+                                    <td><button class="btn btn-info w-md m-b-5 md-trigger m-b-5 m-r-2 btn-xs" data-modal="modal-<?php echo $record->id?>">التفاصيل</button></td>
+                                    <td><a href="#"><button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modald<?php echo$record->id;?>"><i class="fa fa-trash-o"></i></button></a></td>
+                                </tr>
+                                <!------------------------>
+                                <div class="modal fade modal-danger" id="modald<?php echo$record->id;?>" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h1 class="modal-title">حذف عضو </h1>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>هل تريد حذف العنصر !
+                                                </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
+                                                <a href="<?php echo base_url('General_assembly/delete_member').'/'.$record->id ?>"><button type="button" class="btn btn-danger">حذف</button></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                                <!------------------------>
+                                <div class="md-modal md-effect-11" id="modal-<?php echo $record->id?>">
+                                    <div class="md-content">
+                                        <h3>تفاصيل العضو</h3>
+                                        <div class="n-modal-body">
+                                            <div class="row" style="margin-right:10px">
+                                                <div class="col-sm-3">
+                                                    <h5> إسم العضو:</h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <h5>  <?php echo $record->name?></h5>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="margin-right:10px">
+                                                <div class="col-sm-3">
+                                                    <h5> العنوان:</h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <h5><?php echo$record->address;?></h5>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="margin-right:10px">
+                                                <div class="col-sm-3">
+                                                    <h5> رقم الهاتف:</h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <h5> <?php echo$record->mobile;?></h5>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="margin-right:10px">
+                                                <div class="col-sm-3">
+                                                    <h5> تاريخ التعيين:</h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <h5><? echo $record->date_of_hiring; ?></h5>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="margin-right:10px">
+                                                <div class="col-sm-3">
+                                                    <h5> الإيميل:</h5>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <h5> <?php echo$record->email;?></h5>
+                                                </div>
+                                            </div>
+                                            <!--                                            -->
+                                            <button class="btn btn-add md-close">إغلاق!</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!------------------------>
+                                <?php $a++;endforeach;  ?>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="col-xs-12 ">
-
-                        <div class="col-md-6  col-sm-12 col-xs-12 inner-side r-data">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 r-inner-btn">
-                    <div class="col-xs-3">
-                    </div>
-                    <div class="col-xs-3">
-                        <input type="submit" role="button" name="save" value="حفظ" class="btn pull-right">
-                    </div>
-                    <?php echo form_close()?>
-                    <div class="col-xs-2">
-                        <button class="btn pull-left" > عودة </button>
-                    </div>
-                    <div class="col-xs-7"></div>
-                </div>
-                <div class="col-sm-12 col-xs-12 r-inner-details">
-                  <?php if(!empty($records)):?>
-                    <table class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer" style="width: 70%;margin-right: 160px">
-                        <thead><tr>
-                            <th >م</th>
-                            <th >إسم العضو</th>
-                            <th >العنوان</th>
-                            <th >التفاصيل</th>
-                            <th >الإجراء</th>
-                        </tr></thead>
-                        <tbody>
-                      <?php  $serial = 0;
-                        foreach($records as $record):
-                            $serial++; ?>
-                        <tr>
-                            <td><?php echo $serial ?></td>
-                                  <td><?php echo $record->name;?></td>
-                                  <td><?php echo $record->address;?></td>
-                            <td><button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal<?php echo $record->id?>"><i class="fa fa-list"></i> التفاصيل </button></td>
-                            <td> <a href="<?php echo base_url('General_assembly/delete_member').'/'.$record->id ?>"> <i class="fa fa-trash" aria-hidden="true"></i> </a> <span></td>
-                        </tr>
-                                 <div class="modal fade" id="myModal<?php echo $record->id?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="gridSystemModalLabel">التفاصيل</h4>
-                                        </div>
-                                        <br />
-                          
-                                    
-                                        <div class="col-sm-3" style="font-size: 16px;">إسم الموظف</div>
-                                        <div class="col-sm-9"  style="font-size: 16px;">
-                                            <?php echo $record->name?>
-                                        </div>
-                                        <br />
-                                        <div class="col-sm-3" style="font-size: 16px;">العنوان</div>
-                                        <div class="col-sm-9"  style="font-size: 16px;">
-                                            <?php echo$record->address;?>
-                                        </div>
-                                        <br /><br />
-                                        <div class="col-sm-3" style="font-size: 16px;">رقم الهاتف</div>
-                                        <div class="col-sm-9"  style="font-size: 16px;">
-                                            <?php echo$record->mobile;?>
-                                        </div>
-                                        <br /><br />
-                                        <div class="col-sm-3" style="font-size: 16px;">الإيميل</div>
-                                        <div class="col-sm-9"  style="font-size: 16px;">
-                                            <?php echo$record->email;?>
-                                        </div>
-                                        <br /><br />
-                                        <div class="modal-body">
-                                           
-                        
-                                            <div class="col-md-3" style="font-size: 16px;"></div>
-                                            <div class="col-md-9"></div>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
-                                        </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal-dialog -->
-                            </div>
-                    <?php endforeach ;?>
-                        </tbody>
-                    </table>
-                    <?php endif;?>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-
-
-
-
-
+    <?php  endif; ?>
 
 
 
