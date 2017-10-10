@@ -87,835 +87,520 @@
 	}
 </style>
 
-
-
 <!--------------------------------------------------------------------->
-<!--------------------------------------------------------------------->
-<div class="r-program">
-	<div class="container">
-		<div class="col-sm-11 col-xs-12">
-			<?php $this->load->view('admin/finance_resource/main_tabs'); ?>
 
-			<div class="details-resorce">
-				<div class="col-xs-12 r-inner-details">
-					<?php  echo form_open_multipart('finance_resource/edit_donors/'.$results[0]->id)?>
-					<?/* echo'<pre>';
-					var_dump($results[0]->id);
-					echo'</pre>';
-					die  ;*/
-					?>
-					<div class="col-xs-12 ">
+<?php  echo form_open_multipart('finance_resource/edit_donors/'.$results[0]->id)?>
+<div class="col-sm-12 fadeInUp wow" data-wow-delay="0.3s">
+    <div  class="panel panel-bd lobidisable lobipanel lobipanel-sortable ">
+        <div class="panel-heading">
+            <h3 class="panel-title"></h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group col-sm-4">
+                <label class="label label-green  half">نوع المتبرع</label>
+                <select  id="r-moasasa"  name="donor_type"onchange="change($('#r-moasasa').val());" <? echo $disabled;?> class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                    <? $arr=array('إختر','فردي','مؤسسة');
+                    for($s=0;$s<sizeof($arr);$s++):
+                    $select='';
+                    if($results[0]->donor_type ==$s){
+                        $select='selected';
+                    }
+                    ?>
+                    <option value="<? echo $s; ?>" <? echo $select;?>><? echo$arr[$s]; ?></option>
+                    <?php endfor;?>
+                </select>
+                <input type="hidden" name="types"  id="types" value="<? echo $results[0]->donor_type ;?>"/>
+            </div>
+        </div>
+        <?if($results[0]->donor_type ==1){
+            $stylez= 'display: none;';
+            $style= '';
+        }elseif($results[0]->donor_type ==2){
+            $style= 'display: none;';
+            $stylez= '';
+        }?>
+        <div class="panel-body mo_types" style="<? echo $style;?>">
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">اسم المستخدم</label>
+                <input type="text" name="person_name" class="form-control half input-style" placeholder="اسم المستخدم" value="<? echo $results[0]->user_name; ?>" <? echo $readonly;?> <? echo $readonly;?> >
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">تاريخ الكفالة</label>
+                <input type="text"  name="guaranty_date" class=" some_class_2 form-control half input-style  <? echo $class;?>" placeholder="شهر / يوم / سنة"  id="some_class_1" value="<?  if(!empty($results[0]->guaranty_date)): echo date('m-d-Y',$results[0]->guaranty_date); endif;?>"  <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">كلمة المرور</label>
+                <input type="password" name="person_n" class="form-control half input-style" placeholder="كلمة المرور" >
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> تأكيد  كلمة المرور</label>
+                <input type="password" name="person_n" class="form-control half input-style" placeholder="كلمة المرور" onkeyup="return valid_chik_one();" >
+                <span  id="validate_one" class="help-block"></span>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">صفه الفرد</label>
+                <input type="text" name="character_person" class="form-control half input-style" placeholder="صفه الفرد"  value="<? echo $results[0]->character_person;?>" <? echo $readonly;?> >
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">حالة الكافل</label>
+                <select    name="guaranty_status" <? echo $disabled;?>  class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                    <? $arrays =array('إختر','علي قيد الحياه','متوفي');
+                    for($f=0;$f<sizeof($arrays);$f++):
+                    $select='';
+                    if($f == $results[0]->guaranty_status){
+                        $select='selected';
+                    }
+                    ?>
+                    <option value="<? echo $f; ?>" <? echo $select;?> ><? echo $arrays[$f]; ?> </option>
+                    <?php endfor;?>
+                </select>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">وسيط الكفالة</label>
+                <div class="panel panel-default">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <i class="indicator glyphicon glyphicon-chevron-down"></i>
+                            </h4>
+                        </div>
+                    </a>
+                    <div id="collapseOne" class="panel-collapse collapse ">
+                        <div class="panel-body">
+                            <div class="form-group col-sm-6">
+                                <label class="label label-green  half">اسم الكافل</label>
+                                <input type="text"  name="donor_mediator_name" class="form-control half input-style" placeholder="اسم الكافل" value="<? echo $results[0]->donor_mediator_name;?>" <? echo $readonly;?>>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="label label-green  half">العلاقة</label>
+                                <input type="text" name="donor_mediator_status" class="form-control half input-style" placeholder="العلاقة" value="<? echo $results[0]->donor_mediator_status;?>" <? echo $readonly;?>>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">اسم العائلة</label>
+                <input type="text" name="family_name" class="form-control half input-style" placeholder="اسم العائلة"  value="<? echo $results[0]->family_name;?>"  <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">اسم الجد</label>
+                <input type="text" name="grand_father_name" class="form-control half input-style" placeholder="اسم الجد"  value="<? echo $results[0]->grand_father_name;?>"  <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">الجنس</label>
+                <select    name="gender_id_fk"   <? echo $disabled;?> class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                    <?  $gender_arr= array('إختر','ذكر','أنثي');
+                    for ($n=0;$n<sizeof($gender_arr);$n++):
+                        $sec='';
+                        if($n == $results[0]->gender_id_fk){
+                            $sec='selected';
+                        }?>
+                        <option value="<? echo $n;?>" <? echo $sec;?> > <? echo $gender_arr[$n]?></option>
+                    <? endfor;?>
+                </select>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">الجنسية</label>
+                <select    name="nationality_id_fk" <? echo $disabled;?>  class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                    <option value="0"> - اختر - </option>
+                    <?php  foreach ($nationality as $record):
+                        $select='';
+                        if($results[0]->nationality_id_fk==$record->id){
+                            $select='selected';
+                        }?>
+                        <option value="<?php  echo $record->id;?>" <? echo $select;?>><?php  echo $record->title;?></option>
+                    <?php  endforeach;?>
+                </select>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">نوع الهوية</label>
+                <select    name="national_type_id_fk"   <? echo $disabled;?> class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                    <?php
+                    $national_id_array =array('- اختر -','الهوية الوطنية','إقامة','وثيقة','جواز سفر');
+                    foreach ($national_id_array as $k=>$v):
 
-						<div class="col-md-6  col-sm-12 col-xs-12 inner-side r-data">
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> نوع المتبرع </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<select id="r-moasasa"  name="donor_type" onchange="change($('#r-moasasa').val());" <? echo $disabled;?>>
-										<? $arr=array('إختر','فردي','مؤسسة');
-										  for($s=0;$s<sizeof($arr);$s++):
-											  $select='';
-										  if($results[0]->donor_type ==$s){
-											  $select='selected';
-										  }
-										?>
-										  <option value="<? echo $s; ?>" <? echo $select;?>><? echo$arr[$s]; ?></option>
-										<? endfor;?>
+                        $sec='';
+                        if($k == $results[0]->national_type_id_fk){
+                            $sec='selected';
+                        }?>
+                        <option value="<?php  echo $k;?>" <? echo $sec;?>><?php  echo $v;?></option>
+                    <?php  endforeach;?>
+                </select>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">رقم الهوية</label>
+                <input type="number" name="national_id_fk" class="form-control half input-style" placeholder="رقم الهوية"  value="<? echo $results[0]->national_id_fk;?>"  <? echo $readonly;?> >
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> جهه العمل</label>
+                <input type="text" name="guaranty_job_place" class="form-control half input-style" placeholder="جهه العمل"  value="<? echo $results[0]->guaranty_job_place;?>"  <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">المهنة</label>
+                <select    name="guaranty_job"  <? echo $disabled;?> class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                    <? $job_arr =array('إختر','موظف حكومي','موظف قطاع خاص','اعمال حرة','لا يعمل');
+                    for($d=0;$d<sizeof($job_arr);$d++):
+                        $sec='';
+                        if($results[0]->guaranty_job == $d){
+                            $sec='selected';
+                        }
+                        ?>
+                        <option value="<? echo $d;?>" <? echo $sec;?>><? echo $job_arr[$d];?></option>
+                    <? endfor;?>
+                </select>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">طريقه السداد</label>
+                <select   id="r-style-resours"   <? echo $disabled;?> name="person_pay_method_id_fk" onchange="go($('#r-style-resours').val());"  class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                    <?  $pay = array('إختر','نقدي','شيك','تحويل','استقطاع','شبكه');
+                    for($a=0;$a<sizeof($pay);$a++):
+                        $sec='';
+                        if($a == $results[0]->pay_method_id_fk){
+                            $sec='selected';
+                        }?>
+                        <option value="<?echo $a;?>" <? echo $sec;?>><?echo $pay[$a];?></option>
+                    <?endfor?>
+                </select>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">المدينة</label>
+                <select    name="person_guaranty_city" <? echo $disabled;?> class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                    <option value="0"> - اختر - </option>
+                    <?php
+                    foreach($main_depart as $record):
+                        $sec='';
+                        if($results[0]->guaranty_city == $record->id){
+                            $sec='selected';
+                        }?>
+                        <option value="<? echo $record->id; ?>" <? echo $sec;?>><? echo $record->main_dep_name ;?></option>
+                    <? endforeach;?>
+                </select>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> رقم جوال اضافي</label>
+                <input type="number" name="person_guaranty_another_mob" class="form-control half input-style" placeholder="رقم جوال اضافي" value="<? echo$results[0]->guaranty_another_mob;?>"  <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> رقم الجوال</label>
+                <input type="number" name="person_guaranty_mob" class="form-control half input-style" placeholder="رقم الجوال" value="<? echo$results[0]->guaranty_mob;?>"  <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">  تاكيد البريد الاكتروني</label>
+                <input type="email" id="user_email_validate" name="guaranty_email" onkeyup="return validate_e();" value="<? echo $results[0]->guaranty_email;?>" class="form-control half input-style">
+                <span  id="validate_E" class="help-block"></span>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> البريد الالكتروني </label>
+                <input type="email" id="user_email" name="guaranty_email"  class="form-control half input-style" placeholder="رقم الجوال"  value="<? echo $results[0]->guaranty_email;?>" <? echo $readonly;?>>
+            </div>
+            <input type="hidden" name="id"  id="id" value="<? echo $results[0]->pay_method_id_fk;?>"/>
+            <? if($results[0]->pay_method_id_fk >1):?>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">رقم حساب البنكي</label>
+                <input type="number" name="bank_account_number" class="form-control half input-style" placeholder="رقم حساب البنكي" value="<? echo $results[0]->bank_account_number ;?>"  <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> اسم البنك</label>
+                <select    name="bank_code_fk"  class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                    <option value="0"> - اختر - </option>
+                    <option>البنك العربي مكرر </option>
+                    <option> الرياض </option>
+                    <option> مصرف راجحي </option>
+                    <option> مصرف الانماء </option>
+                    <option> بنك الجزيرة </option>
+                    <option> بنك البلاد </option>
+                    <option> السعودي الفرنسي </option>
+                    <option> الاهلي التجاري</option>
+                    <option> ساب </option>
+                    <option> سامبا </option>
+                    <option> السعودي البريطاني </option>
+                    <option> السعودي الهولندي </option>
+                    <option> السعودي الاستثمار </option>
+                    <option> العربي الوطني</option>
+                    <option> الجزيرة مكرر</option>
+                </select>
+            </div>
 
-									</select>
-								</div>
-							</div>
-						</div>
-						<input type="hidden" name="types"  id="types" value="<? echo $results[0]->donor_type ;?>"/>
-					</div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> اسم البنك</label>
+                <select    name="bank_code_fk"  class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                    <option value="0"> - اختر - </option>
+                    <option>البنك العربي مكرر </option>
+                    <option> الرياض </option>
+                    <option> مصرف راجحي </option>
+                    <option> مصرف الانماء </option>
+                    <option> بنك الجزيرة </option>
+                    <option> بنك البلاد </option>
+                    <option> السعودي الفرنسي </option>
+                    <option> الاهلي التجاري</option>
+                    <option> ساب </option>
+                    <option> سامبا </option>
+                    <option> السعودي البريطاني </option>
+                    <option> السعودي الهولندي </option>
+                    <option> السعودي الاستثمار </option>
+                    <option> العربي الوطني</option>
+                    <option> الجزيرة مكرر</option>
+                </select>
+            </div>
+                <div class="form-group col-sm-6">
+                    <label class="label label-green  half">رقم حساب اضافي </label>
+                    <input type="number" name="bank_account_another_number" class="form-control half input-style" placeholder="رقم حساب اضافي" value="<? echo $results[0]->bank_account_another_number ;?>"  <? echo $readonly;?>>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="label label-green  half">اسم صاحب الحساب</label>
+                    <input type="text" name="bank_account_person_name" class="form-control half input-style" placeholder="اسم صاحب الحساب" value="<? echo $results[0]->bank_account_person_name ;?>"  <? echo $readonly;?>>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="label label-green  half">رقم العضوية </label>
+                    <input type="number" name="membership_number" class="form-control half input-style" placeholder="رقم العضوية" value="<? echo $results[0]->membership_number ;?>"  <? echo $readonly;?>>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="label label-green  half">ملاحظات </label>
+                    <textarea class="form-control" name="guaranty_note"  <? echo $readonly;?>><? echo $results[0]->guaranty_note ;?></textarea>
+                </div>
+            <? endif;?>
 
+        </div>
+        <div class="panel-body mo_type" style="<? echo $stylez;?>">
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">اسم المستخدم</label>
+                <input type="text" name="corporation_name" class="form-control half input-style" placeholder="اسم المستخدم"  value="<? echo $results[0]->user_name;?>" <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> تأكيد  كلمة المرور</label>
+                <input type="password" id="corporation_password_validate" onkeyup="return valid_chik_org();" class="form-control half input-style"  >
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">كلمة المرور</label>
+                <input type="password" id="corporation_password" name="corporation_password" class="form-control half input-style" placeholder="كلمة المرور" >
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">طريقه السداد</label>
+                <select   id="r-style-resours1" name="corporation_pay_method_id_fk"  <? echo $disabled;?> onchange="go_($('#r-style-resours1').val());" class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                    <?  $pay = array('إختر','نقدي','شيك','تحويل','استقطاع','شبكه');
+                    for($a=0;$a<sizeof($pay);$a++):
+                        $sec='';
+                        if($a == $results[0]->pay_method_id_fk){
+                            $sec='selected';
+                        }?>
+                        <option value="<?echo $a;?>" <? echo $sec;?>><?echo $pay[$a];?></option>
+                    <?endfor?>
+                </select>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">اسم المؤسسة </label>
+                <input type="text" name="corporation_guaranty_name" class="form-control half input-style" placeholder="اسم المؤسسة" value="<? echo $results[0]->guaranty_name;?>" <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> الهاتف</label>
+                <input type="number" name="corporation_guaranty_another_mob" class="form-control half input-style" placeholder="رقم جوال اضافي"  value="<? echo $results[0]->guaranty_another_mob;?>" <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">المدينة</label>
+                <select     <? echo $disabled;?> name="corporation_guaranty_city"  class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                    <option value="0"> - اختر - </option>
+                    <?php foreach($main_depart as $record):
+                        $sec='';
+                        if($results[0]->guaranty_city == $record->id){
+                            $sec='selected';
+                        }?>
+                        <option value="<? echo $record->id; ?>" <? echo $sec;?>><? echo $record->main_dep_name ;?></option>
+                    <? endforeach;?>
+                </select>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> رقم الجوال</label>
+                <input type="number" name="corporation_guaranty_mob" class="form-control half input-style" placeholder="رقم الجوال" value="<? echo $results[0]->guaranty_mob;?>" <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> تأكيد البريد   الالكتروني</label>
+                <input type="email" id="user_email_validate" onkeyup="return validate_e();" class="form-control half input-style" value="<? echo $results[0]->guaranty_email;?>" <? echo $readonly;?> >
+                <span  id="validate_E" class="help-block"></span>
+            </div>
+            <div class="form-group col-sm-6 r-resoursezm">
+                <label class="label label-green  half">رقم حساب البنكي</label>
+                <input type="number" name="bank_account_number" class="form-control half input-style" placeholder="رقم حساب البنكي" value="<? echo $results[0]->bank_account_number;?>" <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> البريد الالكتروني</label>
+                <input type="email"  id="user_email" name="corporation_guaranty_email" class="form-control half input-style" placeholder="البريد الالكتروني"  value="<? echo $results[0]->guaranty_email;?>" <? echo $readonly;?>>
+            </div>
+            <input type="hidden" name="ids"  id="ids" value="<? echo $results[0]->pay_method_id_fk;?>"/>
+            <? if($results[0]->pay_method_id_fk >1):?>
+                <div class="form-group col-sm-6 r-resoursezm">
+                    <label class="label label-green  half"> اسم البنك</label>
+                    <select    name="bank_code_fk"  class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                        <option value="0"> - اختر - </option>
+                        <option>البنك العربي مكرر </option>
+                        <option> الرياض </option>
+                        <option> مصرف راجحي </option>
+                        <option> مصرف الانماء </option>
+                        <option> بنك الجزيرة </option>
+                        <option> بنك البلاد </option>
+                        <option> السعودي الفرنسي </option>
+                        <option> الاهلي التجاري</option>
+                        <option> ساب </option>
+                        <option> سامبا </option>
+                        <option> السعودي البريطاني </option>
+                        <option> السعودي الهولندي </option>
+                        <option> السعودي الاستثمار </option>
+                        <option> العربي الوطني</option>
+                        <option> الجزيرة مكرر</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-6 r-resoursezm">
+                    <label class="label label-green  half"> اسم البنك</label>
+                    <select    name="bank_code_fk"  class="choose-date selectpicker form-control half"  data-show-subtext="true" data-live-search="true">
+                        <option value="0"> - اختر - </option>
+                        <option>البنك العربي مكرر </option>
+                        <option> الرياض </option>
+                        <option> مصرف راجحي </option>
+                        <option> مصرف الانماء </option>
+                        <option> بنك الجزيرة </option>
+                        <option> بنك البلاد </option>
+                        <option> السعودي الفرنسي </option>
+                        <option> الاهلي التجاري</option>
+                        <option> ساب </option>
+                        <option> سامبا </option>
+                        <option> السعودي البريطاني </option>
+                        <option> السعودي الهولندي </option>
+                        <option> السعودي الاستثمار </option>
+                        <option> العربي الوطني</option>
+                        <option> الجزيرة مكرر</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-6 r-resoursezm">
+                    <label class="label label-green  half">رقم حساب اضافي  </label>
+                    <input type="number" name="bank_account_another_number" class="form-control half input-style" placeholder="رقم حساب البنكي" value="<? echo $results[0]->bank_account_another_number;?>" <? echo $readonly;?>>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="label label-green  half ">رقم الصندوق   </label>
+                    <input type="number" name="box_number" class="form-control half input-style" placeholder="رقم حساب البنكي" value="<? echo $results[0]->box_number;?>" <? echo $readonly;?>>
+                </div>
+                <div class="form-group col-sm-6 r-resoursezm">
+                    <label class="label label-green  half ">اسم صاحب الحساب  </label>
+                    <input type="text" name="bank_account_person_name" class="form-control half input-style" placeholder="رقم حساب البنكي" value="<? echo $results[0]->bank_account_person_name;?>" <? echo $readonly;?>>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="label label-green  half">فاكس  </label>
+                    <input type="text" name="fax_number" class="form-control half input-style" placeholder="رقم حساب البنكي" value="<? echo $results[0]->fax_number;?>" <? echo $readonly;?>>
+                </div>
+                <div class="form-group col-sm-6 r-resoursezm1">
+                    <label class="label label-green  half"> رقم العضوية  </label>
+                    <input type="number" name="membership_number" class="form-control half input-style" placeholder="رقم حساب البنكي" value="<? echo $results[0]->membership_number;?>" <? echo $readonly;?>>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="label label-green  half">  شروط الدعم  </label>
+                    <textarea class="form-control"  <? echo $readonly;?>  name="condition_support"><? echo $results[0]->condition_support;?></textarea>
+                </div>
+            <? endif;?>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> رقم التصريح   </label>
+                <input type="number" name="permit_number" class="form-control half input-style" placeholder="رقم حساب البنكي" value="<? echo $results[0]->permit_number;?>" <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half"> العنوان   </label>
+                <input type="text" name="address" class="form-control half input-style" placeholder="العنوان" value="<? echo $results[0]->address;?>" <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">  الرمز البريدي   </label>
+                <input type="number" name="postal_code" class="form-control half input-style" placeholder="الرمز البريدي " value="<? echo $results[0]->postal_code;?>" <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">  التحويلة  </label>
+                <input type="text" name="transformation" class="form-control half input-style" placeholder="التحويلة" value="<? echo $results[0]->transformation;?>" <? echo $readonly;?>>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">   موقع المؤسسة  </label>
+                <input type="text" name="organization_web_site" class="form-control half input-style" placeholder="موقع المؤسسة" value="<? echo $results[0]->organization_web_site;?>" <? echo $readonly;?> >
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="label label-green  half">  المشاريع </label>
+                <textarea class="form-control"  <? echo $readonly;?>  name="projects"><? echo $results[0]->projects;?></textarea>
+            </div>
+        </div>
 
-					<?if($results[0]->donor_type ==1){
-						$stylez= 'display: none;';
-						$style= '';
-					}elseif($results[0]->donor_type ==2){
-						$style= 'display: none;';
-						$stylez= '';
-					}?>
-
-                  <!--section1111-->
-					<div class="col-xs-12 mo_types" style="<? echo $style;?>" >
-						<div class="col-md-6  col-sm-12 col-xs-12 inner-side r-data">
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> اسم المستخدم </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 " name="person_name" value="<? echo $results[0]->user_name; ?>" <? echo $readonly;?> <? echo $readonly;?>>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  كلمة المرور  </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="password" class="r-inner-h4 " id="person_password" name="person_password"   />
-								</div>
-							</div>
-
-							<div class="col-xs-12 r-input">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> صفه الفرد </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 " name="character_person" value="<? echo $results[0]->character_person;?>" <? echo $readonly;?>>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> وسيط الكفالة </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<div class="panel panel-default">
-										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-													<i class="indicator glyphicon glyphicon-chevron-down"></i>
-												</h4>
-											</div>
-										</a>
-										<div id="collapseOne" class="panel-collapse collapse ">
-											<div class="panel-body">
-												<h4 class="r-h4"> اسم الكافل   </h4>
-												<input type="text" class="r-inner-h4 r-inside" name="donor_mediator_name" value="<? echo $results[0]->donor_mediator_name;?>" <? echo $readonly;?>>
-												<h4 class="r-h4">  العلاقة   </h4>
-												<input type="text" class="r-inner-h4 r-inside" name="donor_mediator_status" value="<? echo $results[0]->donor_mediator_status;?>" <? echo $readonly;?>>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> الاسم الاول </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 " name="guaranty_name" value="<? echo $results[0]->guaranty_name;?>" <? echo $readonly;?>>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> اسم الجد </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 " name="grand_father_name" value="<? echo $results[0]->grand_father_name;?>" <? echo $readonly;?>>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> الجنسية </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<select name="nationality_id_fk" <? echo $disabled;?>>
-										<option value="0"> - اختر - </option>
-										<?php  foreach ($nationality as $record):
-											$select='';
-											if($results[0]->nationality_id_fk==$record->id){
-											$select='selected';
-											}?>
-											<option value="<?php  echo $record->id;?>" <? echo $select;?>><?php  echo $record->title;?></option>
-										<?php  endforeach;?>
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> رقم الهوية </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="number" class="r-inner-h4" <? echo $readonly;?> name="national_id_fk" value="<? echo $results[0]->national_id_fk;?>">
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> المهنة </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<select name="guaranty_job" <? echo $disabled;?>>
-										<? $job_arr =array('إختر','موظف حكومي','موظف قطاع خاص','اعمال حرة','لا يعمل');
-										for($d=0;$d<sizeof($job_arr);$d++):
-										    $sec='';
-											if($results[0]->guaranty_job == $d){
-											 $sec='selected';
-										 }
-										?>
-
-										<option value="<? echo $d;?>" <? echo $sec;?>><? echo $job_arr[$d];?></option>
-							             <? endfor;?>
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> المدينة </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<select name="person_guaranty_city" <? echo $disabled;?>>
-										<option value="0"> - اختر - </option>
-										<?php
-										foreach($main_depart as $record):
-											$sec='';
-											if($results[0]->guaranty_city == $record->id){
-												$sec='selected';
-											}?>
-											<option value="<? echo $record->id; ?>" <? echo $sec;?>><? echo $record->main_dep_name ;?></option>
-										<? endforeach;?>
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> رقم الجوال </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="number" class="r-inner-h4 " <? echo $readonly;?> name="person_guaranty_mob" value="<? echo $results[0]->guaranty_mob;?>">
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">   البريد الالكتروني </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="email" class="r-inner-h4 "    <? echo $readonly;?> id="user_email" name="guaranty_email" value="<? echo $results[0]->guaranty_email;?>" />
-								</div>
-							</div>
-						<?php
-						if($results[0]->pay_method_id_fk >1):?>
-							<div class="col-xs-12 r-resoursez" >
-								<div class="col-xs-6">
-									<h4 class="r-h4">  اسم البنك  </h4>
-								</div>
-								<div class="col-xs-6 r-input ">
-									<select name="bank_code_fk">
-										<option value="0"> - اختر - </option>
-										<option>البنك العربي مكرر </option>
-										<option> الرياض </option>
-										<option> مصرف راجحي </option>
-										<option> مصرف الانماء </option>
-										<option> بنك الجزيرة </option>
-										<option> بنك البلاد </option>
-										<option> السعودي الفرنسي </option>
-										<option> الاهلي التجاري</option>
-										<option> ساب </option>
-										<option> سامبا </option>
-										<option> السعودي البريطاني </option>
-										<option> السعودي الهولندي </option>
-										<option> السعودي الاستثمار </option>
-										<option> العربي الوطني</option>
-										<option> الجزيرة مكرر</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-12 r-resoursez">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> رقم حساب اضافي   </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "   <? echo $readonly;?> name="bank_account_another_number" value="<? echo $results[0]->bank_account_another_number;?>">
-								</div>
-							</div>
-							<div class="col-xs-12 r-resoursez">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  اسم صاحب الحساب </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "  <? echo $readonly;?> name="bank_account_person_name" value="<? echo $results[0]->bank_account_person_name ;?>">
-								</div>
-							</div>
-
-							<div class="col-xs-12 r-resoursez1" style="display: none;">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> رقم العضوية    </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "   <? echo $readonly;?>name="membership_number" value="<? echo $results[0]->membership_number ;?>">
-								</div>
-							</div>
-							<?   endif;?>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> ملاحظات </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<textarea class="r-textarea" name="guaranty_note"  <? echo $readonly;?>><? echo $results[0]->guaranty_note ;?></textarea>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6  col-sm-12 col-xs-12 inner-side r-data">
-							<div class="col-xs-12 ">
-								<div class="col-xs-6">
-									<h4 class="r-h4 ">  تاريخ الكفالة </h4>
-								</div>
-								<div class="col-xs-6 r-input ">
-									<div class="docs-datepicker">
-										<div class="input-group">
-											<input type="text" class="form-control  <? echo $class;?>" name="guaranty_date" placeholder="شهر / يوم / سنة " value="<?  if(!empty($results[0]->guaranty_date)): echo date('m-d-Y',$results[0]->guaranty_date); endif;?>"  <? echo $readonly;?>>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-12 r-center-text2">
-								<div class="col-xs-6">
-									<h4 class="r-h4">   تأكيد  كلمة المرور  </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="password" class="r-inner-h4 "  id="person_password_validate"  onkeyup="return valid_chik_one();"  />
-									<span  id="validate_one" class="help-block"></span>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  حالة الكافل</h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<select name="guaranty_status"  <? echo $disabled;?>>
-										<? $arrays =array('إختر','علي قيد الحياه','متوفي');
-										for($f=0;$f<sizeof($arrays);$f++):
-											$select='';
-											if($f == $results[0]->guaranty_status){
-												$select='selected';
-											}
-										?>
-										<option value="<? echo $f; ?>" <? echo $select;?> ><? echo $arrays[$f]; ?> </option>
-										<? endfor;?>
-
-									</select>
-								</div>
-							</div>
-
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> اسم العائلة </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "  <? echo $readonly;?> name="family_name" value="<? echo $results[0]->family_name;?>">
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  الجنس   </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<select name="gender_id_fk"  <? echo $disabled;?>>
-										<?  $gender_arr= array('إختر','ذكر','أنثي');
-										for ($n=0;$n<sizeof($gender_arr);$n++):
-											$sec='';
-											if($n == $results[0]->gender_id_fk){
-												$sec='selected';
-											}?>
-										<option value="<? echo $n;?>" <? echo $sec;?> > <? echo $gender_arr[$n]?></option>
-											<? endfor;?>
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  نوع الهوية   </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<select name="national_type_id_fk"  <? echo $disabled;?>>
-										<?php
-										$national_id_array =array('- اختر -','الهوية الوطنية','إقامة','وثيقة','جواز سفر');
-										foreach ($national_id_array as $k=>$v):
-
-											$sec='';
-											if($k == $results[0]->national_type_id_fk){
-												$sec='selected';
-											}?>
-											<option value="<?php  echo $k;?>" <? echo $sec;?>><?php  echo $v;?></option>
-										<?php  endforeach;?>
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  جهه العمل   </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "  <? echo $readonly;?> name="guaranty_job_place" value="<? echo$results[0]->guaranty_job_place;?>">
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">   طريقه السداد   </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<select id="r-style-resours" name="person_pay_method_id_fk"  <? echo $disabled;?>
-											onchange="go($('#r-style-resours').val());">
-										<?  $pay = array('إختر','نقدي','شيك','تحويل','استقطاع','شبكه');
-
-										for($a=0;$a<sizeof($pay);$a++):
-											$sec='';
-											if($a == $results[0]->pay_method_id_fk){
-												$sec='selected';
-											}?>
-											<option value="<?echo $a;?>" <? echo $sec;?>><?echo $pay[$a];?></option>
-										<?endfor?>
-
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> رقم جوال اضافي  </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="number" class="r-inner-h4 "  <? echo $readonly;?> name="person_guaranty_another_mob" value="<? echo$results[0]->guaranty_another_mob;?>">
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">   تاكيد البريد الاكتروني   </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="email" class="r-inner-h4 "   <? echo $readonly;?> id="user_email_validate" name="guaranty_email" onkeyup="return validate_e();" value="<? echo $results[0]->guaranty_email;?>"/>
-									<span  id="validate_E" class="help-block"></span>
-								</div>
-							</div>
-							<input type="hidden" name="id"  id="id" value="<? echo $results[0]->pay_method_id_fk;?>"/>
-							<? if($results[0]->pay_method_id_fk >1):?>
-							<div class="col-xs-12 r-resoursez">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> رقم حساب البنكي   </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "  <? echo $readonly;?> name="bank_account_number" value="<? echo $results[0]->bank_account_number ;?>">
-								</div>
-							</div>
-							<div class="col-xs-12 r-resoursez">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> اسم البنك      </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<select name="bank_code_fk">
-										<option value="0"> - اختر - </option>
-										<option>البنك العربي مكرر </option>
-										<option> الرياض </option>
-										<option> مصرف راجحي </option>
-										<option> مصرف الانماء </option>
-										<option> بنك الجزيرة </option>
-										<option> بنك البلاد </option>
-										<option> السعودي الفرنسي </option>
-										<option> الاهلي التجاري</option>
-										<option> ساب </option>
-										<option> سامبا </option>
-										<option> السعودي البريطاني </option>
-										<option> السعودي الهولندي </option>
-										<option> السعودي الاستثمار </option>
-										<option> العربي الوطني</option>
-										<option> الجزيرة مكرر</option>
-									</select>
-								</div>
-							</div>
-							  <? endif;?>
-						</div>
-					</div>
-					<!--section1111-->
-					<!--section222-->
-					<div class="col-xs-12 mo_type r-inner-details" style="<? echo $stylez;?>">
-						<div class="col-md-6  col-sm-12 col-xs-12 inner-side r-data">
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> 22اسم المستخدم </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "  <? echo $readonly;?> name="corporation_name" value="<? echo $results[0]->user_name;?>" >
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  كلمة المرور  </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="password" class="r-inner-h4 " id="corporation_password" name="corporation_password" />
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  اسم المؤسسة    </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "  <? echo $readonly;?> name="corporation_guaranty_name" value="<? echo $results[0]->guaranty_name;?>">
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> المدينة </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<select name="corporation_guaranty_city"  <? echo $disabled;?>>
-										<option value="0"> - اختر - </option>
-										<?php
-										foreach($main_depart as $record):
-											$sec='';
-											if($results[0]->guaranty_city == $record->id){
-												$sec='selected';
-											}?>
-											<option value="<? echo $record->id; ?>" <? echo $sec;?>><? echo $record->main_dep_name ;?></option>
-										<? endforeach;?>
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  رقم الجوال     </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="number" class="r-inner-h4 "  <? echo $readonly;?> name="corporation_guaranty_mob" value="<? echo $results[0]->guaranty_mob;?>">
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">البريد الالكتروني   </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="email" class="r-inner-h4 "   <? echo $readonly;?> id="user_email" name="corporation_guaranty_email" value="<? echo $results[0]->guaranty_email;?>" />
-								</div>
-							</div>
-							<input type="hidden" name="ids"  id="ids" value="<? echo $results[0]->pay_method_id_fk;?>"/>
-
-							<? if($results[0]->pay_method_id_fk >1):?>
-							<div class="col-xs-12 r-resoursezm">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  اسم البنك  </h4>
-								</div>
-								<div class="col-xs-6 r-input ">
-									<select name="bank_code_fk">
-										<option value="0"> - اختر - </option>
-										<option>البنك العربي مكرر </option>
-										<option> الرياض </option>
-										<option> مصرف راجحي </option>
-										<option> مصرف الانماء </option>
-										<option> بنك الجزيرة </option>
-										<option> بنك البلاد </option>
-										<option> السعودي الفرنسي </option>
-										<option> الاهلي التجاري</option>
-										<option> ساب </option>
-										<option> سامبا </option>
-										<option> السعودي البريطاني </option>
-										<option> السعودي الهولندي </option>
-										<option> السعودي الاستثمار </option>
-										<option> العربي الوطني</option>
-										<option> الجزيرة مكرر</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-12 r-resoursezm">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  رقم حساب اضافي     </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "   <? echo $readonly;?> name="bank_account_another_number" value="<? echo $results[0]->bank_account_another_number;?>">
-								</div>
-							</div>
-							<div class="col-xs-12 r-resoursezm">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> اسم صاحب الحساب  </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "  <? echo $readonly;?>  name="bank_account_person_name" value="<? echo $results[0]->bank_account_person_name;?>">
-								</div>
-							</div>
-							<div class="col-xs-12 r-resoursezm1"  style="display: none;">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> رقم العضوية  </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "  <? echo $readonly;?>  name="membership_number" value="<? echo $results[0]->membership_number;?>">
-								</div>
-							</div>
-							<? endif;?>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  رقم التصريح     </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="number" class="r-inner-h4 "  <? echo $readonly;?> name="permit_number" value="<? echo $results[0]->permit_number;?>">
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  العنوان  </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "  <? echo $readonly;?> name="address" value="<? echo $results[0]->address;?>">
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> الرمز البريدي  </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="number" class="r-inner-h4 "  <? echo $readonly;?> name="postal_code" value="<? echo $results[0]->postal_code;?>">
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> التحويلة </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "   <? echo $readonly;?> name="transformation" value="<? echo $results[0]->transformation;?>">
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> موقع المؤسسة   </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "   <? echo $readonly;?> name="organization_web_site" value="<? echo $results[0]->organization_web_site;?>">
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  المشاريع     </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<textarea class="r-textarea" name="projects"  <? echo $readonly;?> ><? echo $results[0]->projects;?></textarea>
-								</div>
-							</div>
-
-
-						</div>
-						<div class="col-md-6  col-sm-12 col-xs-12 inner-side r-data">
-							<div class="col-xs-12 r-center-text3">
-								<div class="col-xs-6">
-									<h4 class="r-h4">   تأكيد  كلمة المرور  </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="password" class="r-inner-h4 " id="corporation_password_validate" onkeyup="return valid_chik_org();"/>
-									<span  id="validate_org" class="help-block"></span>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4">   طريقه السداد   </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<select   <? echo $disabled;?> id="r-style-resours1" name="corporation_pay_method_id_fk" onchange="go_($('#r-style-resours1').val());">
-										<?  $pay = array('إختر','نقدي','شيك','تحويل','استقطاع','شبكه');
-										for($a=0;$a<sizeof($pay);$a++):
-											$sec='';
-											if($a == $results[0]->pay_method_id_fk){
-												$sec='selected';
-											}?>
-											<option value="<?echo $a;?>" <? echo $sec;?>><?echo $pay[$a];?></option>
-										<?endfor?>
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> الهاتف  </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="number" class="r-inner-h4 "  <? echo $readonly;?> name="corporation_guaranty_another_mob" value="<? echo $results[0]->guaranty_another_mob;?>">
-								</div>
-							</div>
-							<div class="col-xs-12 ">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> تأكيد البريد   الالكتروني   </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="email" class="r-inner-h4 "   <? echo $readonly;?> id="user_email_validate" onkeyup="return validate_e();"  value="<? echo $results[0]->guaranty_email;?>"/>
-									<span  id="validate_E" class="help-block"></span>
-								</div>
-							</div>
-							<div class="col-xs-12 r-resoursezm">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> رقم الحساب البنكي   </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="text" class="r-inner-h4 "  <? echo $readonly;?> name="bank_account_number" value="<? echo $results[0]->bank_account_number;?>">
-								</div>
-							</div>
-							<div class="col-xs-12  r-resoursezm">
-								<div class="col-xs-6">
-									<h4 class="r-h4">  اسم البنك  </h4>
-								</div>
-								<div class="col-xs-6 r-input ">
-									<select>
-										<option value="0"> - اختر - </option>
-										<option>البنك العربي مكرر </option>
-										<option> الرياض </option>
-										<option> مصرف راجحي </option>
-										<option> مصرف الانماء </option>
-										<option> بنك الجزيرة </option>
-										<option> بنك البلاد </option>
-										<option> السعودي الفرنسي </option>
-										<option> الاهلي التجاري</option>
-										<option> ساب </option>
-										<option> سامبا </option>
-										<option> السعودي البريطاني </option>
-										<option> السعودي الهولندي </option>
-										<option> السعودي الاستثمار </option>
-										<option> العربي الوطني</option>
-										<option> الجزيرة مكرر</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-12 r-center-text4">
-								<div class="col-xs-6">
-									<h4 class="r-h4">   رقم الصندوق  </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="number" class="r-inner-h4 "   <? echo $readonly;?> name="box_number" value="<? echo $results[0]->box_number;?>">
-								</div>
-							</div>
-							<div class="col-xs-12 ">
-								<div class="col-xs-6">
-									<h4 class="r-h4"> فاكس </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<input type="number" class="r-inner-h4 "  <? echo $readonly;?>  name="fax_number" value="<? echo $results[0]->fax_number;?>">
-								</div>
-							</div>
-							<div class="col-xs-12 r-center-text1">
-								<div class="col-xs-6">
-									<h4 class="r-h4">   شروط الدعم  </h4>
-								</div>
-								<div class="col-xs-6 r-input">
-									<textarea class="r-textarea" name="condition_support"  <? echo $readonly;?> ><? echo $results[0]->condition_support;?></textarea>
-								</div>
-							</div>
-
-
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-xs-12 r-inner-details">
-					<table style="width:100%">
-						<tr>
-							<th>م </th>
-							<th>اسم الملف </th>
-							<th> ارفاق</th>
-							<th>فتح الملف</th>
-
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>صور الهوية الوطنية</td>
-							<td style="width: 35%;">
-								<div class="field">
-
-									<input type="text"  value="" size="40" class="erfa2 file_input_replacement"  placeholder="ارفاق"/>
-									<input type="file" name="<? echo $v;?>" class="file_input_with_replacement">
-								</div>
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>بطاقة المصرف</td>
-							<td style="width: 35%;">
-								<div class="field">
-
-									<input type="text"  value="" size="40" class="erfa2 file_input_replacement"  placeholder="ارفاق"/>
-									<input type="file" name="bank_card_img" class="file_input_with_replacement">
-								</div>
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>وصل إستقطاع البنك </td>
-							<td style="width: 35%;">
-								<div class="field">
-
-									<input type="text"  value="" size="40" class="erfa2 file_input_replacement"  placeholder="ارفاق"/>
-									<input type="file" name="bank_deduction_voucher_img" class="file_input_with_replacement">
-								</div>
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>4</td>
-							<td>أخري</td>
-							<td style="width: 35%;">
-								<div class="field">
-
-									<input type="text"  value="" size="40" class="erfa2 file_input_replacement"  placeholder="ارفاق"/>
-									<input type="file" name="other_img" class="file_input_with_replacement">
-								</div>
-							</td>
-
-							<td></td>
-						</tr>
-					</table>
-					<div class="col-xs-12 r-xs">
-						<h5 class="text-center">تفاصيل</h5>
-						<div class="col-xs-12 r-del">
-							<div class="col-xs-5">
-								<h4> م : </h4>
-								<h4> اسم الملف : </h4>
-								<h4> ارفاق : </h4>
-								<h4> فتح الملف : </h4>
-							</div>
-							<div class="col-xs-7">
-								<h4>1 </h4>
-								<h4> موظف استقبال</h4>
-								<h4> موظف استقبال </h4>
-								<h4>   </h4>
-							</div>
-						</div>
-						<div class="col-xs-12 r-del">
-							<div class="col-xs-5">
-								<h4> م : </h4>
-								<h4> اسم الملف : </h4>
-								<h4> ارفاق : </h4>
-								<h4> فتح الملف : </h4>
-							</div>
-							<div class="col-xs-7">
-								<h4>2 </h4>
-								<h4> موظف استقبال</h4>
-								<h4> موظف استقبال </h4>
-								<h4>   </h4>
-							</div>
-						</div>
-
-						<div class="col-xs-12 r-del">
-							<div class="col-xs-5">
-								<h4> م : </h4>
-								<h4> اسم الملف : </h4>
-								<h4> ارفاق : </h4>
-								<h4> فتح الملف : </h4>
-							</div>
-							<div class="col-xs-7">
-								<h4>3</h4>
-								<h4> موظف استقبال</h4>
-								<h4> موظف استقبال </h4>
-								<h4>   </h4>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-xs-12 r-inner-btn">
-					<div class="col-xs-3">
-					</div>
-					<?php  if($this->uri->segment(4) !='view'):?>
-						<div class="col-xs-3">
-							<input type="submit" role="button" name="save" value="حفظ" class="btn pull-right">
-						</div>
-					<? endif;?>
-					<?php echo form_close()?>
-					<div class="col-xs-2">
-					<a href="<?php echo base_url()."Finance_resource/all_guaranty"?>"> <button class="btn pull-left" > عودة </button></a>
-					</div>
-                    	<div class="col-xs-7">
-				</div>
-
-			</div>
-		</div>
-	</div>
+    </div>
 </div>
+
+<!----------------------input------------------->
+
+<div class="col-sm-12 fadeInUp wow" data-wow-delay="0.3s">
+    <div  class="panel panel-bd lobidisable lobipanel lobipanel-sortable ">
+        <div class="panel-heading">
+            <h3 class="panel-title"> إرفاق الملفات</h3>
+        </div>
+        <div class="panel-body">
+            <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
+                <tr class="info">
+                    <th class=" text-center">م </th>
+                    <th class=" text-center">اسم الملف </th>
+                    <th class=" text-center"> ارفاق</th>
+                    <th class=" text-center">فتح الملف</th>
+                </tr>
+                <tr class="text-center">
+                    <td>1</td>
+                    <td>صور الهوية الوطنية </td>
+                    <td style="width: 35%;">
+                        <div class="field">
+                            <input type="file" name="national_id_img" class="file_input_with_replacement">
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr class="text-center">
+                    <td>2</td>
+                    <td>بطاقة المصرف</td>
+                    <td style="width: 35%;">
+                        <div class="field">
+                            <input type="file" name="bank_card_img" class="file_input_with_replacement">
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr class="text-center">
+                    <td>3</td>
+                    <td>وصل إستقطاع البنك </td>
+                    <td style="width: 35%;">
+                        <div class="field">
+                            <input type="file" name="bank_deduction_voucher_img" class="file_input_with_replacement">
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr class="text-center">
+                    <td>4</td>
+                    <td>أخري</td>
+                    <td style="width: 35%;">
+                        <div class="field">
+                            <input type="file" name="other_img" class="file_input_with_replacement">
+                        </div>
+                    </td>
+
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!----------------------input------------------->
+<div class="form-group col-sm-5"></div>
+<div class="form-group col-sm-4">
+    <a href="<?php echo base_url()."Finance_resource/all_guaranty"?>">  <button type="button" class="btn btn-add  m-b-5"> عودة</button></a>
+    <?php  if($this->uri->segment(4) !='view'):?>
+    <input type="submit" role="button" name="save" value="حفظ" class="btn btn-add  m-b-5">
+    <? endif;?>
+</div>
+<div class="form-group col-sm-5"></div>
+<?php echo form_close()?>
+<!----------------------input------------------->
+
 
 
 

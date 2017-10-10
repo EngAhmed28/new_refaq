@@ -1,14 +1,10 @@
-<?php
-if(isset($_POST['endowment'])){
-?>
-    <?php
-    if($_POST['endowment']  ==0) {
-        if (isset($all_records) && $all_records != null) {
-            ?>
+<?php if(isset($_POST['endowment'])){?>
+    <?php if($_POST['endowment']  ==0) {
+        if (isset($all_records) && $all_records != null) {?>
             <table id="example" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0"
                    width="100%">
                 <thead>
-                <tr>
+                <tr class="info">
                     <th class="text-center">م</th>
                     <th class="text-center">إسم الوقف</th>
                     <th class="text-center">نوع الوقف</th>
@@ -35,26 +31,19 @@ if(isset($_POST['endowment'])){
                         <td>المبلغ المتبقي</td>
                         <td>100%</td>
                         <td><? if ($main_depart[$record->city]) echo $main_depart[$record->city]->main_dep_name; ?></td>
-                        <td>
-                            <a href="<?php echo base_url() . 'Finance_resource/edit_endowments/' . $record->id . '/view' ?>"><i
-                                    class="fa fa-search-plus" aria-hidden="true"></i></a></td>
-                        <td><a href="<?php echo base_url() . 'Finance_resource/edit_endowments/' . $record->id ?>"><i
-                                    class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                        <td><a  class="btn btn-primary btn-circle m-b-5" href="<?php echo base_url().'Finance_resource/edit_endowments/'.$record->id.'/view'?>"><i class="fa fa-list-alt" aria-hidden="true"></i></a></td>
+                        <td> <a href="<?php echo base_url('Finance_resource/edit_endowments').'/'.$record->id?>"><button type="button" class="btn btn-add btn-xs" data-toggle="modal" data-target="#update"><i class="fa fa-pencil"></i></button> </a></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
             </table>
         <?php }
-
-    }else {
-        ?>
-
-
+    }else { ?>
         <?php if (isset($all_select) && $all_select != null) { ?>
             <table id="example" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0"
                    width="100%">
                 <thead>
-                <tr>
+                <tr class="info">
                     <th class="text-center">م</th>
                     <th class="text-center">إسم الوقف</th>
                     <th class="text-center">نوع الوقف</th>
@@ -81,11 +70,8 @@ if(isset($_POST['endowment'])){
                         <td>المبلغ المتبقي</td>
                         <td>100%</td>
                         <td><? if ($main_depart[$record->city]) echo $main_depart[$record->city]->main_dep_name; ?></td>
-                        <td>
-                            <a href="<?php echo base_url() . 'Finance_resource/edit_endowments/' . $record->id . '/view' ?>"><i
-                                    class="fa fa-search-plus" aria-hidden="true"></i></a></td>
-                        <td><a href="<?php echo base_url() . 'Finance_resource/edit_endowments/' . $record->id ?>"><i
-                                    class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                        <td><a  class="btn btn-primary btn-circle m-b-5" href="<?php echo base_url().'Finance_resource/edit_endowments/'.$record->id.'/view'?>"><i class="fa fa-list-alt" aria-hidden="true"></i></a></td>
+                        <td> <a href="<?php echo base_url('Finance_resource/edit_endowments').'/'.$record->id?>"><button type="button" class="btn btn-add btn-xs" data-toggle="modal" data-target="#update"><i class="fa fa-pencil"></i></button> </a></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -96,5 +82,5 @@ if(isset($_POST['endowment'])){
 
 <? }?>
 
- <!-- first if-->
+
 

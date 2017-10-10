@@ -153,13 +153,17 @@
 	</div>
 </div>
 <div class="form-group col-sm-5"></div>
-<div class="form-group col-sm-4">
+<div class="form-group col-sm-10" >
+    <div class="form-group col-sm-2" style="margin-right: 15%">
     <a href="<?php echo base_url()?>finance_resource/all_guaranty">
         <button type="button" class="btn btn-add btn-info m-b-5"> عودة</button> </a>
-
+     </div>
+    <div class="form-group col-sm-2">
     <?if($this->uri->segment(4) !='view'):?>
     <input type="submit" role="button" name="save" value="حفظ" class="btn btn-add btn-info m-b-5">
         <?php echo form_close()?>
+    </div>
+    <div class="form-group col-sm-2">
     <?php elseif($this->uri->segment(4) =='view'):?>
         <button type="button" class="btn btn-primary m-r-2 m-b-5" data-toggle="modal" data-target="#modal-primary">تحويل</button>
         <!---------------------------1------------------>
@@ -192,15 +196,17 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">إغلاق</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
                         <input type="submit" role="button" name="operation" value="تحويل" class="btn btn-primary">
                     </div>
                 </div>
             </div>
         </div>
         <?php echo form_close()?>
+    </div>
+    <div class="form-group col-sm-2">
         <!-----------------------2---------------------->
-        <button type="button" class="btn btn-primary m-r-2 m-b-5" data-toggle="modal" data-target="#modal-warning">تحويل أخر</button>
+        <button type="button" class="btn btn-warning m-r-2 m-b-5" data-toggle="modal" data-target="#modal-warning">تحويل أخر</button>
         <?php  echo form_open_multipart('finance_resource/operation/3/'.$this->uri->segment(2).'/'.$this->uri->segment(3))?>
         <div class="modal fade modal-warning" id="modal-warning" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -229,14 +235,16 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">إغلاق</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
                         <input type="submit" role="button" name="operation" value="تحويل" class="btn btn-warning">
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="form-group col-sm-2">
         <!--------------------------3------------------->
-        <button type="button" class="btn btn-primary m-r-2 m-b-5" data-toggle="modal" data-target="#modal-success">قبول</button>
+        <button type="button" class="btn btn-success m-r-2 m-b-5" data-toggle="modal" data-target="#modal-success">قبول</button>
         <?php  echo form_open_multipart('finance_resource/operation/1/'.$this->uri->segment(2).'/'.$this->uri->segment(3))?>
         <div class="modal fade modal-success" id="modal-success" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -265,15 +273,17 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">إغلاق</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
                         <input type="submit" role="button" name="operation" value="قبول" class="btn btn-success">
                     </div>
                 </div>
             </div>
         </div>
         <?php echo form_close()?>
+    </div>
+    <div class="form-group col-sm-2">
         <!----------------------4----------------------->
-        <button type="button" class="btn btn-primary m-r-2 m-b-5" data-toggle="modal" data-target="#modal-danger">رفض</button>
+        <button type="button" class="btn btn-danger m-r-2 m-b-5" data-toggle="modal" data-target="#modal-danger">رفض</button>
         <div class="modal fade modal-danger" id="modal-danger" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -301,26 +311,25 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">إغلاق</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
                         <input type="submit" role="button" name="operation" value="رفض" class="btn btn-danger">
                     </div>
                 </div>
             </div>
         </div>
         <!--------------------------------------------->
+    </div>
     <?php endif;?>
-</div>
-<?php echo form_close()?>
+</div></div>
 <div class="form-group col-sm-5"></div>
+<?php echo form_close()?>
 
 <!--------------------------------------------------------------------->
 <?php if(isset($all_operation)&&$all_operation!=null):?>
     <div class="col-sm-12">
         <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable ">
             <div class="panel-heading">
-
                     <h3 class="panel-title">الاجراءات المتخذة </h3>
-
                 <div class="btn-group" id="buttonexport">
                     <a href="#">
                     </a>
