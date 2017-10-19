@@ -442,4 +442,23 @@ class Finance_resource extends CI_Controller
         $this->Difined_model->delete("cash_donations",$Conditions_arr);
         redirect('finance_resource/add_today_donations/');
     }
+
+
+    //---------------------------------------------report------------------------------------------//
+
+
+    public function today_donations_period(){
+        $this->load->model('finance_resource_models/Today_donation');
+        $this->load->model('Difined_model');
+        $data['get_name'] = $this->Today_donation->select();
+        if ($this->input->post('date_from') && $this->input->post('date_to') && $this->input->post('type')) {
+            $data['records'] =  $this->Today_donation->get_details_beetween_dates(strtotime($this->input->post('date_from')),strtotime($this->input->post('date_to')),$this->input->post('type'));
+            $this->load->view('admin/reports/get_today_donations_period',$data);
+        }else {
+            $data['subview'] = 'admin/reports/today_donations_period';
+            $this->load->view('admin_index', $data);
+        }
+    }
+
+
 }// END CLASS
