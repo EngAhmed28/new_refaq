@@ -393,7 +393,53 @@ class Finance_resource extends CI_Controller
         redirect('Finance_resource/all_guaranty', 'refresh');
     }
     }
- 
- 
     
+    
+    
+    //-------------------------------------------------------------------------------//
+    public function  add_today_donations()
+    {
+        $this->load->model('Difined_model');
+        $this->load->model('finance_resource_models/Today_donation');
+        $data['records'] = $this->Difined_model->select_all('cash_donations','','','','');
+        $data['donors'] = $this->Difined_model->select_all('donors_t','','','','');
+        $data['guarantees'] = $this->Today_donation->select_guarantees();
+        $data['get_name'] = $this->Today_donation->select();
+        if($this->input->post('add')){
+            $this->Today_donation->insert();
+          redirect('Finance_resource/add_today_donations', 'refresh');
+        }elseif ($this->input->post('values')) {
+            $data['id']=$this->input->post('values');
+            $this->load->view('admin/finance_resource/get_donation_type',$data);
+        }else{
+            $data['subview'] = 'admin/finance_resource/today_donations';
+            $this->load->view('admin_index', $data);
+        }
+    }
+
+
+    public function  edit_today_donations($id)
+    {
+        $this->load->model('Difined_model');
+        $this->load->model('finance_resource_models/Today_donation');
+        $data['records'] = $this->Difined_model->select_all('cash_donations','','','','');
+        $data['donors'] = $this->Difined_model->select_all('donors_t','','','','');
+        $data['guarantees'] = $this->Today_donation->select_guarantees();
+        $data['get_name'] = $this->Today_donation->select();
+        $data['result'] = $this->Difined_model->select_search_key('cash_donations','id',$id);
+        if($this->input->post('edit')){
+            $this->Today_donation->update($id);
+            redirect('Finance_resource/add_today_donations', 'refresh');
+        }else{
+            $data['subview'] = 'admin/finance_resource/today_donations';
+            $this->load->view('admin_index', $data);
+        }
+    }
+
+
+    public function delete_today_donations($id){
+        $Conditions_arr=array("id"=>$id);
+        $this->Difined_model->delete("cash_donations",$Conditions_arr);
+        redirect('finance_resource/add_today_donations/');
+    }
 }// END CLASS
